@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BB-8 Droid Toggle Switch — RTX Remastered Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    :root {
+      --demo-bg: #07111F;
+      --demo-text: #F8FAFC;
+      --demo-accent: #FFB300;
+    }
+    
+    body.light-theme {
+      --demo-bg: #F0F4F8;
+      --demo-text: #0F172A;
+      --demo-accent: #D97706;
+      background-color: #F4F7FB;
+      background-image: 
+        radial-gradient(ellipse 80% 60% at 15% 5%, rgba(37,99,235,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 85% 15%, rgba(245,158,11,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 80% at 50% 50%, rgba(59,130,246,0.12) 0%, transparent 70%);
+      color: #0F172A;
+    }
+
+    .demo-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .demo-card {
+      max-width: 680px;
+      width: 100%;
+      padding: 48px 36px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .demo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #FFB300;
+      background: rgba(255,179,0,0.12);
+      border: 1px solid rgba(255,179,0,0.3);
+    }
+
+    .demo-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .demo-desc {
+      color: #94A3B8;
+      font-size: 1.05rem;
+      max-width: 480px;
+      line-height: 1.6;
+    }
+
+    /* Scaling the BB-8 toggle for hero display */
+    .bb8-hero-toggle {
+      --toggle-size: 16px;
+      margin: 20px 0;
+      filter: drop-shadow(0 15px 35px rgba(0,0,0,0.5));
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .bb8-hero-toggle:hover {
+      transform: scale(1.06);
+    }
+
+    .demo-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .theme-status {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      color: #38BDF8;
+      padding: 8px 18px;
+      border-radius: 8px;
+      background: rgba(56,189,248,0.1);
+      border: 1px solid rgba(56,189,248,0.25);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Liquid Background Orbs -->
+  <div class="global-liquid-orbs">
+    <div class="orb orb-primary"></div>
+    <div class="orb orb-gold"></div>
+    <div class="orb orb-emerald"></div>
+  </div>
+
+  <div class="demo-wrapper">
+    <div class="demo-card alg">
+      <div class="demo-badge">
+        <i class="fa-solid fa-robot"></i> Uiverse.io Remastered
+      </div>
+
+      <h1 class="demo-title">BB-8 Droid Theme Toggle</h1>
+      
+      <p class="demo-desc">
+        Interactive Star Wars BB-8 toggle with daytime Tatooine sand dunes and deep cosmic night sky animations.
+      </p>
+
+      <!-- The BB-8 Toggle Component -->
+      <label class="bb8-toggle bb8-hero-toggle" id="themeToggleLabel">
+        <input class="bb8-toggle__checkbox" type="checkbox" id="bb8Checkbox">
+        <div class="bb8-toggle__container">
+          <div class="bb8-toggle__scenery">
+            <div class="bb8-toggle__star"></div>
+            <div class="bb8-toggle__star"></div>
+            <div class="bb8-toggle__star"></div>
+            <div class="bb8-toggle__star"></div>
+            <div class="bb8-toggle__star"></div>
+            <div class="bb8-toggle__star"></div>
+            <div class="bb8-toggle__star"></div>
+            <div class="tatto-1"></div>
+            <div class="tatto-2"></div>
+            <div class="gomrassen"></div>
+            <div class="hermes"></div>
+            <div class="chenini"></div>
+            <div class="bb8-toggle__cloud"></div>
+            <div class="bb8-toggle__cloud"></div>
+            <div class="bb8-toggle__cloud"></div>
+          </div>
+          <div class="bb8">
+            <div class="bb8__head-container">
+              <div class="bb8__antenna"></div>
+              <div class="bb8__antenna"></div>
+              <div class="bb8__head"></div>
+            </div>
+            <div class="bb8__body"></div>
+          </div>
+          <div class="artificial__hidden">
+            <div class="bb8__shadow"></div>
+          </div>
+        </div>
+      </label>
+
+      <div class="theme-status" id="themeStatus">
+        <i class="fa-solid fa-moon"></i> Active Mode: Cosmic Dark (Night)
+      </div>
+
+      <div class="demo-actions">
+        <a href="index.html" class="btn btn-primary">
+          <i class="fa-solid fa-school"></i> Return to School Portal
+        </a>
+        <a href="mobile_app_ui.html" class="btn btn-secondary">
+          <i class="fa-solid fa-mobile-screen"></i> Mobile UI Demo
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const checkbox = document.getElementById('bb8Checkbox');
+    const statusText = document.getElementById('themeStatus');
+
+    // Web Audio API Synthesized BB-8 droid chirp sound
+    function playBB8Beep(isNight) {
+      try {
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        const now = audioCtx.currentTime;
+        if (isNight) {
+          osc.frequency.setValueAtTime(450, now);
+          osc.frequency.exponentialRampToValueAtTime(880, now + 0.15);
+          osc.frequency.exponentialRampToValueAtTime(1200, now + 0.3);
+        } else {
+          osc.frequency.setValueAtTime(1100, now);
+          osc.frequency.exponentialRampToValueAtTime(650, now + 0.15);
+          osc.frequency.exponentialRampToValueAtTime(400, now + 0.3);
+        }
+
+        gain.gain.setValueAtTime(0.15, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
+
+        osc.start(now);
+        osc.stop(now + 0.35);
+      } catch (e) {
+        // AudioContext not allowed before user interaction
+      }
+    }
+
+    checkbox.addEventListener('change', () => {
+      const isNight = checkbox.checked;
+      playBB8Beep(isNight);
+      
+      if (isNight) {
+        document.body.classList.remove('light-theme');
+        statusText.innerHTML = '<i class="fa-solid fa-moon"></i> Active Mode: Cosmic Dark (Night)';
+        statusText.style.color = '#38BDF8';
+        statusText.style.borderColor = 'rgba(56,189,248,0.3)';
+        statusText.style.background = 'rgba(56,189,248,0.1)';
+      } else {
+        document.body.classList.add('light-theme');
+        statusText.innerHTML = '<i class="fa-solid fa-sun"></i> Active Mode: Tatooine Day (Light)';
+        statusText.style.color = '#D97706';
+        statusText.style.borderColor = 'rgba(217,119,6,0.3)';
+        statusText.style.background = 'rgba(217,119,6,0.1)';
+      }
+    });
+  </script>
+</body>
+</html>

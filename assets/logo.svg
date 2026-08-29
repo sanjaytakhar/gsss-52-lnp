@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="crestGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD54F" />
+      <stop offset="50%" stop-color="#FFB300" />
+      <stop offset="100%" stop-color="#FFA000" />
+    </linearGradient>
+    <linearGradient id="crestNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1565C0" />
+      <stop offset="100%" stop-color="#0D47A1" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Outer Shield -->
+  <path d="M200,20 L330,65 C330,230 200,360 200,380 C200,360 70,230 70,65 Z" fill="url(#crestNavy)" filter="url(#dropShadow)" stroke="url(#crestGold)" stroke-width="8"/>
+  
+  <!-- Inner Border Line -->
+  <path d="M200,35 L315,75 C315,220 200,340 200,360 C200,340 85,220 85,75 Z" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+  
+  <!-- Top Banner Arc Text Area -->
+  <path id="textArcTop" d="M 100,105 A 115,115 0 0,1 300,105" fill="none" />
+  <text fill="#FFFFFF" font-family="'Cinzel', 'Playfair Display', serif" font-size="13" font-weight="bold" letter-spacing="1.5">
+    <textPath href="#textArcTop" startOffset="50%" text-anchor="middle">
+      GOVT. SR. SEC. SCHOOL
+    </textPath>
+  </text>
+  
+  <!-- Sub-Arc for 52 LNP -->
+  <text x="200" y="125" text-anchor="middle" fill="#FFD54F" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="800" letter-spacing="2">
+    ★ 52 LNP (RAJASTHAN) ★
+  </text>
+
+  <!-- Central Emblem: Sun / Rays -->
+  <circle cx="200" cy="180" r="42" fill="#FFA000" opacity="0.2"/>
+  <circle cx="200" cy="180" r="32" fill="url(#crestGold)"/>
+
+  <!-- Flaming Torch of Knowledge -->
+  <path d="M200,140 C208,152 215,160 206,170 C203,174 197,174 194,170 C185,160 192,152 200,140 Z" fill="#E65100"/>
+  <path d="M200,147 C204,155 208,162 203,168 C201,170 199,170 197,168 C192,162 196,155 200,147 Z" fill="#FFEB3B"/>
+  
+  <!-- Torch Handle -->
+  <path d="M194,172 L206,172 L203,195 L197,195 Z" fill="#4E342E"/>
+  <rect x="192" y="170" width="16" height="4" rx="2" fill="#BCAAA4"/>
+
+  <!-- Open Book -->
+  <g transform="translate(145, 205)">
+    <path d="M55,30 C35,22 10,25 0,28 L0,55 C10,52 35,49 55,57 Z" fill="#FFFFFF" stroke="#0D47A1" stroke-width="2"/>
+    <path d="M55,30 C75,22 100,25 110,28 L110,55 C100,52 75,49 55,57 Z" fill="#FFFFFF" stroke="#0D47A1" stroke-width="2"/>
+    <path d="M55,30 L55,57" stroke="#0D47A1" stroke-width="3"/>
+    <line x1="12" y1="36" x2="45" y2="34" stroke="#90CAF9" stroke-width="2"/>
+    <line x1="12" y1="42" x2="45" y2="40" stroke="#90CAF9" stroke-width="2"/>
+    <line x1="12" y1="48" x2="38" y2="46" stroke="#90CAF9" stroke-width="2"/>
+    <line x1="65" y1="34" x2="98" y2="36" stroke="#90CAF9" stroke-width="2"/>
+    <line x1="65" y1="40" x2="98" y2="42" stroke="#90CAF9" stroke-width="2"/>
+    <line x1="65" y1="46" x2="92" y2="48" stroke="#90CAF9" stroke-width="2"/>
+  </g>
+
+  <!-- Laurel Wreath -->
+  <g fill="#FFD54F">
+    <path d="M125,185 C120,195 125,210 135,215 C130,205 130,195 125,185 Z"/>
+    <path d="M118,215 C115,228 122,240 133,245 C126,236 124,224 118,215 Z"/>
+    <path d="M125,248 C125,260 135,270 148,272 C139,266 134,255 125,248 Z"/>
+    <path d="M142,275 C146,286 160,294 172,292 C161,288 152,280 142,275 Z"/>
+    
+    <path d="M275,185 C280,195 275,210 265,215 C270,205 270,195 275,185 Z"/>
+    <path d="M282,215 C285,228 278,240 267,245 C274,236 276,224 282,215 Z"/>
+    <path d="M275,248 C275,260 265,270 252,272 C261,266 266,255 275,248 Z"/>
+    <path d="M258,275 C254,286 240,294 228,292 C239,288 248,280 258,275 Z"/>
+  </g>
+
+  <!-- Bottom Ribbon / Motto Banner -->
+  <g transform="translate(0, 20)">
+    <path d="M80,310 L120,295 L120,325 Z" fill="#C79100"/>
+    <path d="M320,310 L280,295 L280,325 Z" fill="#C79100"/>
+    <rect x="105" y="295" width="190" height="30" rx="4" fill="url(#crestGold)" stroke="#B27B00" stroke-width="1.5"/>
+    <text x="200" y="315" text-anchor="middle" fill="#0D47A1" font-family="'Cinzel', 'Playfair Display', serif" font-size="12" font-weight="900" letter-spacing="1">
+      INSPIRE • LEARN • LEAD
+    </text>
+  </g>
+
+  <!-- Est. Year -->
+  <text x="200" y="365" text-anchor="middle" fill="#B0BEC5" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" letter-spacing="1.5">
+    ESTD. 1968 • UDISE: 08010205201
+  </text>
+</svg>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sleek Liquid Glass Toggle Switch | Dark Monochromatic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      background: radial-gradient(circle at 50% 30%, #151D2A 0%, #0B111A 50%, #05070B 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #E2E8F0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Ambient Background Glow */
+    .ambient-glow {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, rgba(30, 41, 59, 0.15) 50%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      border-radius: 50%;
+    }
+
+    /* Showcase Container */
+    .showcase-card {
+      background: rgba(18, 26, 38, 0.65);
+      backdrop-filter: blur(30px) saturate(190%);
+      -webkit-backdrop-filter: blur(30px) saturate(190%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 28px;
+      padding: 48px 56px;
+      box-shadow: 
+        0 30px 60px -12px rgba(0, 0, 0, 0.7),
+        0 18px 36px -18px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -1px 2px 0 rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      z-index: 10;
+      position: relative;
+    }
+
+    .title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #94A3B8;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    /* ==========================================================================
+       LIQUID GLASS TOGGLE SWITCH COMPONENT
+       ========================================================================== */
+    .liquid-toggle-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* Hide Default Checkbox */
+    .liquid-toggle-input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+    }
+
+    /* Outer Track / Capsule */
+    .liquid-toggle-track {
+      position: relative;
+      width: 108px;
+      height: 58px;
+      background: linear-gradient(145deg, rgba(20, 29, 44, 0.85) 0%, rgba(9, 14, 23, 0.95) 100%);
+      backdrop-filter: blur(24px) saturate(200%);
+      -webkit-backdrop-filter: blur(24px) saturate(200%);
+      border-radius: 9999px;
+      cursor: pointer;
+      padding: 5px;
+      transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1.5px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 
+        0 10px 25px -3px rgba(0, 0, 0, 0.6),
+        0 4px 6px -2px rgba(0, 0, 0, 0.4),
+        inset 0 2px 4px 0 rgba(0, 0, 0, 0.6),
+        inset 0 -1px 2px 0 rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      user-select: none;
+    }
+
+    /* Track Inner Refraction Highlight */
+    .liquid-toggle-track::before {
+      content: '';
+      position: absolute;
+      inset: 1px;
+      border-radius: 9999px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 100%);
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    /* Active State Glow */
+    .liquid-toggle-input:checked + .liquid-toggle-track {
+      background: linear-gradient(145deg, rgba(15, 28, 48, 0.9) 0%, rgba(10, 20, 36, 0.98) 100%);
+      border-color: rgba(56, 189, 248, 0.35);
+      box-shadow: 
+        0 12px 30px -4px rgba(0, 0, 0, 0.7),
+        0 0 20px 2px rgba(56, 189, 248, 0.2),
+        inset 0 2px 4px 0 rgba(0, 0, 0, 0.7),
+        inset 0 -1px 2px 0 rgba(56, 189, 248, 0.25);
+    }
+
+    /* The Liquid Glass Thumb / Knob */
+    .liquid-toggle-thumb {
+      position: relative;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.02) 100%);
+      backdrop-filter: blur(16px) saturate(220%);
+      -webkit-backdrop-filter: blur(16px) saturate(220%);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-top: 1.5px solid rgba(255, 255, 255, 0.75);
+      box-shadow: 
+        0 8px 18px 0 rgba(0, 0, 0, 0.5),
+        0 2px 6px 0 rgba(0, 0, 0, 0.3),
+        inset 0 1px 2px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -2px 4px 0 rgba(0, 0, 0, 0.3);
+      transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    /* Inner Specular Light Bead */
+    .liquid-toggle-thumb::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 10px;
+      width: 14px;
+      height: 7px;
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 80%);
+      border-radius: 50%;
+      transform: rotate(-25deg);
+      pointer-events: none;
+    }
+
+    /* Thumb Active State Movement */
+    .liquid-toggle-input:checked + .liquid-toggle-track .liquid-toggle-thumb {
+      transform: translateX(50px);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(56, 189, 248, 0.25) 50%, rgba(14, 165, 233, 0.1) 100%);
+      border-color: rgba(255, 255, 255, 0.7);
+      box-shadow: 
+        0 8px 24px 0 rgba(0, 0, 0, 0.6),
+        0 0 16px 2px rgba(56, 189, 248, 0.45),
+        inset 0 1px 3px 0 rgba(255, 255, 255, 0.95),
+        inset 0 -2px 4px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    /* Subtle Indicator Icon inside Thumb */
+    .toggle-icon {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      transition: color 0.3s ease, transform 0.4s ease;
+    }
+
+    .liquid-toggle-input:checked + .liquid-toggle-track .toggle-icon {
+      color: #38BDF8;
+      filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.8));
+      transform: scale(1.15);
+    }
+
+    /* Status Label */
+    .status-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #64748B;
+      transition: color 0.3s ease;
+      min-width: 70px;
+    }
+
+    .status-text.active {
+      color: #F8FAFC;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-glow"></div>
+
+  <div class="showcase-card">
+    <div class="title">Liquid Glass Aesthetic • Toggle Switch</div>
+
+    <div class="liquid-toggle-wrapper">
+      <span class="status-text" id="statusOff">OFF</span>
+
+      <label>
+        <input type="checkbox" class="liquid-toggle-input" id="liquidSwitch" checked>
+        <div class="liquid-toggle-track">
+          <div class="liquid-toggle-thumb">
+            <span class="toggle-icon">●</span>
+          </div>
+        </div>
+      </label>
+
+      <span class="status-text active" id="statusOn">ON</span>
+    </div>
+
+    <div style="font-size: 0.78rem; color: #475569; text-align: center; max-width: 260px; line-height: 1.5;">
+      Frosted &amp; glossy materials with multi-layer blur, specular highlights, and organic depth.
+    </div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('liquidSwitch');
+    const statusOff = document.getElementById('statusOff');
+    const statusOn = document.getElementById('statusOn');
+
+    toggle.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        statusOn.classList.add('active');
+        statusOff.classList.remove('active');
+      } else {
+        statusOff.classList.add('active');
+        statusOn.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
