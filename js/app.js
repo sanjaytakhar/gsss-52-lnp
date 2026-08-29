@@ -291,6 +291,20 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   function renderEvents() {
     if (!eventsListContainer || !window.SCHOOL_DATA) return;
+    if (window.SCHOOL_DATA.upcomingEvents.length === 0) {
+      eventsListContainer.innerHTML = `
+        <div class="event-card text-center" style="padding: 36px 16px; justify-content: center; flex-direction: column; border-radius: var(--r-md);">
+          <i class="fa-regular fa-calendar-check" style="font-size: 2rem; color: var(--brand-gold); margin-bottom: 8px; opacity: 0.85;"></i>
+          <h4 style="font-size: 0.95rem; color: var(--text-primary); margin-bottom: 2px;">
+            ${currentLang === 'hi' ? 'वर्तमान में कोई आगामी कार्यक्रम निर्धारित नहीं है' : 'No Upcoming Events Scheduled'}
+          </h4>
+          <p style="font-size: 0.8rem; color: var(--text-secondary);">
+            ${currentLang === 'hi' ? 'नवीन कार्यक्रमों की तिथियां शीघ्र यहाँ प्रदर्शित की जाएंगी।' : 'New session dates and upcoming schedules will appear here.'}
+          </p>
+        </div>
+      `;
+      return;
+    }
     eventsListContainer.innerHTML = window.SCHOOL_DATA.upcomingEvents.map(event => `
       <div class="event-card">
         <div class="event-date-badge">
@@ -313,6 +327,20 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   function renderNews() {
     if (!newsListContainer || !window.SCHOOL_DATA) return;
+    if (window.SCHOOL_DATA.latestNews.length === 0) {
+      newsListContainer.innerHTML = `
+        <div class="news-card text-center" style="padding: 36px 16px; justify-content: center; flex-direction: column; border-radius: var(--r-md);">
+          <i class="fa-regular fa-newspaper" style="font-size: 2rem; color: var(--brand-sky); margin-bottom: 8px; opacity: 0.85;"></i>
+          <h4 style="font-size: 0.95rem; color: var(--text-primary); margin-bottom: 2px;">
+            ${currentLang === 'hi' ? 'नवीनतम समाचार एवं प्रेस विज्ञप्ति' : 'School News & Press Updates'}
+          </h4>
+          <p style="font-size: 0.8rem; color: var(--text-secondary);">
+            ${currentLang === 'hi' ? 'नवीन गतिविधियां एवं उपलब्धियां शीघ्र यहाँ प्रकाशित होंगी।' : 'Recent achievements and official updates will appear here.'}
+          </p>
+        </div>
+      `;
+      return;
+    }
     newsListContainer.innerHTML = window.SCHOOL_DATA.latestNews.map(item => `
       <div class="news-card">
         <img src="${item.image}" alt="${item.titleEn}" class="news-thumb" loading="lazy">

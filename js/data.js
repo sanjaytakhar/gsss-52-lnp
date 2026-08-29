@@ -77,98 +77,21 @@ window.SCHOOL_DATA = {
     }
   ],
 
-  upcomingEvents: [
-    {
-      id: 1,
-      monthEn: "MAY",
-      monthHi: "मई",
-      day: "24",
-      titleEn: "Annual Science Exhibition & Innovation Fair",
-      titleHi: "वार्षिक विज्ञान प्रदर्शनी एवं नवाचार मेला",
-      timeEn: "09:30 AM - 02:00 PM",
-      timeHi: "प्रातः 09:30 से दोपहर 02:00",
-      venueEn: "Main School Auditorium & Science Lab",
-      venueHi: "मुख्य विद्यालय सभागार एवं विज्ञान लैब"
-    },
-    {
-      id: 2,
-      monthEn: "MAY",
-      monthHi: "मई",
-      day: "28",
-      titleEn: "Gargi Puraskar & Merit Felicitation Ceremony",
-      titleHi: "गार्गी पुरस्कार एवं प्रतिभा सम्मान समारोह",
-      timeEn: "10:00 AM - 01:00 PM",
-      timeHi: "प्रातः 10:00 से दोपहर 01:00",
-      venueEn: "Open Air Stage, GSSS 52 LNP",
-      venueHi: "खुला रंगमंच, रा.उ.मा.वि. 52 एलएनपी"
-    },
-    {
-      id: 3,
-      monthEn: "JUN",
-      monthHi: "जून",
-      day: "02",
-      titleEn: "Annual Inter-School Athletics & Kabbadi Tournament",
-      titleHi: "वार्षिक अंतर-विद्यालय एथलेटिक्स व कबड्डी प्रतियोगिता",
-      timeEn: "08:00 AM onwards",
-      timeHi: "प्रातः 08:00 बजे से",
-      venueEn: "Sports Ground 52 LNP",
-      venueHi: "खेल मैदान, 52 एलएनपी"
-    },
-    {
-      id: 4,
-      monthEn: "JUN",
-      monthHi: "जून",
-      day: "15",
-      titleEn: "New Session Orientation & Free Textbook Distribution",
-      titleHi: "नवीन सत्र अभिविन्यास एवं निःशुल्क पाठ्यपुस्तक वितरण",
-      timeEn: "09:00 AM - 12:30 PM",
-      timeHi: "प्रातः 09:00 से 12:30",
-      venueEn: "All Classrooms",
-      venueHi: "समस्त कक्षा कक्ष"
-    }
-  ],
+  upcomingEvents: [],
 
-  latestNews: [
-    {
-      id: 1,
-      titleEn: "GSSS 52 LNP Clinches District Level Robotics & STEM Championship",
-      titleHi: "रा.उ.मा.वि. 52 एलएनपी ने जिला स्तरीय रोबोटिक्स एवं स्टेम प्रतियोगिता जीती",
-      descEn: "Our ICT Smart Lab innovators secured 1st prize across Sri Ganganagar district for their Solar Irrigation prototype.",
-      descHi: "हमारे आईसीटी स्मार्ट लैब के विद्यार्थियों ने सौर ऊर्जा सिंचाई मॉडल के लिए जिले में प्रथम स्थान प्राप्त किया।",
-      date: "May 18, 2026",
-      image: "assets/images/events/annual-day-cultural-fest.jpg"
-    },
-    {
-      id: 2,
-      titleEn: "Inauguration of Modern Integrated Agriculture Practical Field",
-      titleHi: "आधुनिक एकीकृत कृषि प्रायोगिक प्रक्षेत्र का उद्घाटन",
-      descEn: "State-of-the-art polyhouse and drip irrigation setup launched for Class 11-12 Agriculture stream students.",
-      descHi: "कक्षा 11-12 कृषि संकाय के विद्यार्थियों के लिए अत्याधुनिक पॉलीहाउस एवं ड्रिप सिंचाई प्रणाली शुरू की गई।",
-      date: "May 12, 2026",
-      image: "assets/images/events/morning-prayer-assembly.jpg"
-    },
-    {
-      id: 3,
-      titleEn: "Alumni Spotlight: Er. Manpreet Singh (IIT Roorkee, Class of 2021)",
-      titleHi: "पूर्व छात्र गौरव: ई. मनप्रीत सिंह (आईआईटी रुड़की, सत्र 2021)",
-      descEn: "Village student from 52 LNP shares his journey from rural government school to top tech leadership in aerospace.",
-      descHi: "52 एलएनपी के ग्रामीण सरकारी स्कूल से एयरोस्पेस इंजीनियरिंग तक की प्रेरणादायक सफलता यात्रा साझा की।",
-      date: "May 05, 2026",
-      image: "assets/images/events/tiranga-rally-gate.jpg"
-    }
-  ],
+  latestNews: [],
 
   notices: [],
 
-  academicStreams: [
+    academicStreams: [
     {
       id: "science",
       nameEn: "Science Stream (विज्ञान संकाय)",
       nameHi: "विज्ञान संकाय (Science)",
       banner: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80",
       badge: "RBSE Certified",
-      descEn: "Advanced Physics, Chemistry, Biology & Mathematics with state-of-the-art laboratory practicals.",
-      descHi: "भौतिकी, रसायन, जीव विज्ञान व गणित के साथ आधुनिक प्रयोगशाला में प्रायोगिक शिक्षण।",
+      descEn: "Advanced Physics, Chemistry & Biology with state-of-the-art modern laboratory practicals.",
+      descHi: "भौतिकी, रसायन एवं जीव विज्ञान के साथ आधुनिक प्रयोगशाला में प्रायोगिक शिक्षण।",
       subjects: ["Physics (भौतिक विज्ञान)", "Chemistry (रसायन विज्ञान)", "Biology (जीव विज्ञान)"]
     },
     {
@@ -177,29 +100,19 @@ window.SCHOOL_DATA = {
       nameHi: "कला संकाय (Arts)",
       banner: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80",
       badge: "Popular Choice",
-      descEn: "Rich foundation in History, Political Science, Geography, Hindi Literature & English.",
-      descHi: "इतिहास, राजनीति विज्ञान, भूगोल, हिन्दी साहित्य एवं अंग्रेजी में गहन अध्ययन।",
+      descEn: "Rich foundation in Political Science, Geography, Sociology, and Literature.",
+      descHi: "राजनीति विज्ञान, भूगोल, समाजशास्त्र एवं भाषा साहित्य में उत्कृष्ट शिक्षण।",
       subjects: ["Political Science (राजनीति विज्ञान)", "Geography (भूगोल)", "Sociology (समाजशास्त्र)", "Punjabi / Sanskrit (तृतीय भाषा)"]
     },
     {
-      id: "agriculture",
-      nameEn: "Agriculture Stream (कृषि विज्ञान)",
-      nameHi: "कृषि विज्ञान संकाय (Agriculture)",
-      banner: "https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=600&q=80",
-      badge: "Practical Field",
-      descEn: "Comprehensive study of Agronomy, Horticulture, Animal Husbandry & Soil Sciences in Ganganagar region.",
-      descHi: "सस्य विज्ञान, उद्यानिकी, पशुपालन एवं मृदा विज्ञान का व्यावहारिक व रोजगारपरक प्रशिक्षण।",
-      subjects: ["Agronomy", "Horticulture", "Animal Husbandry", "Agricultural Chemistry"]
-    },
-    {
       id: "vocational",
-      nameEn: "Vocational & ICT (व्यावसायिक शिक्षा)",
-      nameHi: "व्यावसायिक एवं आईटी संकाय",
+      nameEn: "Vocational & Computer Education (कम्प्यूटर शिक्षा)",
+      nameHi: "व्यावसायिक एवं कम्प्यूटर शिक्षा",
       banner: "assets/images/campus/ict-computer-lab.jpg",
-      badge: "Skill India",
-      descEn: "Computer Applications, Web Design, Data Entry, Digital Literacy & Practical Vocational training.",
-      descHi: "कंप्यूटर अनुप्रयोग, वेब डिजाइन, डिजिटल साक्षरता एवं रोजगारोन्मुखी कौशल विकास।",
-      subjects: ["Information Tech (IT/ITeS)", "Retail Management", "Digital Skills", "Financial Literacy"]
+      badge: "Digital India",
+      descEn: "Computer Science, ICT Smart Lab practicals, Digital Literacy & Practical Vocational training under BCI.",
+      descHi: "कम्प्यूटर विज्ञान, आईसीटी स्मार्ट लैब, डिजिटल साक्षरता एवं व्यावहारिक कम्प्यूटर प्रशिक्षण।",
+      subjects: ["Computer Science (कम्प्यूटर विज्ञान)", "Information Tech (IT)", "Digital Skills", "Financial Literacy"]
     }
   ],
 
@@ -503,40 +416,9 @@ window.SCHOOL_DATA = {
     }
   ],
 
-  testimonials: [
-    {
-      id: 1,
-      quoteEn: "GSSS 52 LNP provided my daughter with both academic rigor and modern lab exposure. She secured 94% in RBSE 12th Science and received the Gargi Puraskar!",
-      quoteHi: "52 एलएनपी स्कूल ने मेरी बेटी को बेहतरीन शिक्षा और आधुनिक लैब की सुविधा दी। उसने 12वीं विज्ञान में 94% अंक पाकर गार्गी पुरस्कार प्राप्त किया।",
-      author: "Rajendra Saharan",
-      authorHi: "राजेन्द्र सहारण",
-      roleEn: "Parent of Class 12 Science Topper",
-      roleHi: "अभिभावक (मेधावी छात्रा के पिता)",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      id: 2,
-      quoteEn: "The teachers here truly care and push us to be our best every day. The ICT lab and agriculture training prepared me for higher university entrance exams.",
-      quoteHi: "यहाँ के शिक्षक अत्यंत समर्पित हैं। स्कूल की कंप्यूटर लैब और कृषि प्रायोगिक ज्ञान ने मुझे यूनिवर्सिटी की प्रवेश परीक्षा में सफल होने में मदद की।",
-      author: "Jaswinder Kaur",
-      authorHi: "जसविंदर कौर",
-      roleEn: "Class of 2025 (JET Qualifier)",
-      roleHi: "पूर्व छात्रा (जेट परीक्षा चयनित)",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      id: 3,
-      quoteEn: "GSSS 52 LNP instilled in me discipline and curiosity. Today as an engineer, I always look back with immense gratitude towards my mentors here.",
-      quoteHi: "इस विद्यालय ने मुझमें अनुशासन और सीखने की ललक पैदा की। आज एक इंजीनियर के रूप में मैं अपने गुरुजनों का सदैव आभारी हूँ।",
-      author: "Er. Harpreet Brar",
-      authorHi: "ई. हरप्रीत बराड़",
-      roleEn: "Software Engineer & Alumni '21",
-      roleHi: "सॉफ्टवेयर इंजीनियर (पूर्व छात्र 2021)",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80"
-    }
-  ],
+  testimonials: [],
 
-        gallery: [
+  gallery: [
     {
       id: 1,
       category: "campus",
