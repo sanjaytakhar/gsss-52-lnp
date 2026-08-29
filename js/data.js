@@ -15,9 +15,11 @@ window.SCHOOL_DATA = {
     address: "Village 52 LNP (Manjhuwas), Tehsil Padampur, District Sri Ganganagar, Rajasthan - 335041",
     addressHi: "ग्राम 52 एलएनपी (मांझूवास), तहसील पदमपुर, जिला श्रीगंगानगर, राजस्थान - 335041",
     phone: "+91 154 2852052 / +91 94140 XXXXX",
-    email: "gsss52lnp.sriganganagar@rajasthan.gov.in",
-    principal: "Dr. Ramkumar Verma (M.Sc., M.Ed., Ph.D.)",
-    principalHi: "डॉ. रामकुमार वर्मा (एम.एससी., एम.एड., पीएच.डी.)",
+    email: "gsss52lnp.sriganganagar@gmail.com",
+    principal: "Smt. Kavita",
+    shalaDarpanCode: "217004",
+    shalaDarpanUrl: "https://rajshaladarpan.rajasthan.gov.in",
+    principalHi: "श्रीमती कविता (प्रधानाचार्य)",
   },
 
   stats: [
@@ -218,7 +220,7 @@ window.SCHOOL_DATA = {
       badge: "RBSE Certified",
       descEn: "Advanced Physics, Chemistry, Biology & Mathematics with state-of-the-art laboratory practicals.",
       descHi: "भौतिकी, रसायन, जीव विज्ञान व गणित के साथ आधुनिक प्रयोगशाला में प्रायोगिक शिक्षण।",
-      subjects: ["Physics", "Chemistry", "Mathematics", "Biology", "Comp. Science"]
+      subjects: ["Physics (भौतिक विज्ञान)", "Chemistry (रसायन विज्ञान)", "Biology (जीव विज्ञान)"]
     },
     {
       id: "arts",
@@ -228,7 +230,7 @@ window.SCHOOL_DATA = {
       badge: "Popular Choice",
       descEn: "Rich foundation in History, Political Science, Geography, Hindi Literature & English.",
       descHi: "इतिहास, राजनीति विज्ञान, भूगोल, हिन्दी साहित्य एवं अंग्रेजी में गहन अध्ययन।",
-      subjects: ["Political Science", "Geography", "History", "Hindi Literature", "Drawing"]
+      subjects: ["Political Science (राजनीति विज्ञान)", "Geography (भूगोल)", "Sociology (समाजशास्त्र)", "Punjabi / Sanskrit (तृतीय भाषा)"]
     },
     {
       id: "agriculture",
@@ -342,78 +344,150 @@ window.SCHOOL_DATA = {
     }
   ],
 
-  faculty: [
+    faculty: [
     {
-      name: "Dr. Ramkumar Verma",
-      nameHi: "डॉ. रामकुमार वर्मा",
+      name: "Smt. Kavita",
+      nameHi: "श्रीमती कविता",
       designationEn: "Principal & Head of School",
       designationHi: "प्रधानाचार्य (Principal)",
-      subjectEn: "Administration / Science",
-      subjectHi: "प्रशासन / विज्ञान",
-      photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80"
+      subjectEn: "School Administration",
+      subjectHi: "प्रशासन एवं विद्यालय प्रबंधन",
+      photo: "assets/images/faculty/principal-kavita.jpg"
     },
     {
-      name: "Sh. Balwant Singh Godara",
-      nameHi: "श्री बलवंत सिंह गोदारा",
-      designationEn: "Lecturer (Senior Teacher)",
-      designationHi: "व्याख्याता (Lecturer)",
-      subjectEn: "Physics & Chemistry",
-      subjectHi: "भौतिक व रसायन विज्ञान",
-      photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
+      name: "Smt. Sushila",
+      nameHi: "श्रीमती सुशीला",
+      designationEn: "Vice Principal",
+      designationHi: "उप-प्रधानाचार्य (Vice Principal)",
+      subjectEn: "Academics & Administration",
+      subjectHi: "शैक्षणिक एवं प्रशासनिक समन्वय",
+      photo: "assets/images/faculty/sushila-vp.jpg"
     },
     {
-      name: "Smt. Sunita Sharma",
-      nameHi: "श्रीमती सुनीता शर्मा",
-      designationEn: "Senior Teacher (Grade II)",
-      designationHi: "वरिष्ठ अध्यापक (द्वितीय श्रेणी)",
-      subjectEn: "Mathematics & ICT",
-      subjectHi: "गणित एवं कम्प्यूटर",
-      photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80"
+      name: "Smt. Priya Choudhary",
+      nameHi: "श्रीमती प्रिया चौधरी",
+      designationEn: "Lecturer (Sr. Sec)",
+      designationHi: "व्याख्याता (उच्च माध्यमिक)",
+      subjectEn: "Political Science",
+      subjectHi: "राजनीति विज्ञान",
+      photo: "assets/images/faculty/priya-choudhary.jpg"
     },
     {
-      name: "Sh. Sukhdev Dhillon",
-      nameHi: "श्री सुखदेव ढिल्लों",
-      designationEn: "Lecturer (Agriculture)",
-      designationHi: "व्याख्याता (कृषि विज्ञान)",
-      subjectEn: "Agronomy & Horticulture",
-      subjectHi: "सस्य विज्ञान व उद्यानिकी",
-      photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80"
+      name: "Sh. Sunil Kant",
+      nameHi: "श्री सुनील कांत",
+      designationEn: "Lecturer (Sr. Sec)",
+      designationHi: "व्याख्याता (उच्च माध्यमिक)",
+      subjectEn: "Geography",
+      subjectHi: "भूगोल",
+      photo: "assets/images/faculty/sunil-kant.jpg"
     },
     {
-      name: "Smt. Manju Bala",
-      nameHi: "श्रीमती मंजू बाला",
-      designationEn: "Lecturer (Humanities)",
-      designationHi: "व्याख्याता (कला संकाय)",
-      subjectEn: "Political Science & History",
-      subjectHi: "राजनीति विज्ञान व इतिहास",
-      photo: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=300&q=80"
+      name: "Sh. Sanjay Takhar",
+      nameHi: "श्री संजय तखर",
+      designationEn: "Basic Computer Instructor",
+      designationHi: "बेसिक कम्प्यूटर अनुदेशक",
+      subjectEn: "ICT & Smart Computer Lab",
+      subjectHi: "कम्प्यूटर विज्ञान एवं स्मार्ट लैब प्रभारी",
+      photo: "assets/images/faculty/sanjay-takhar.jpg"
     },
     {
-      name: "Sh. Rajesh Kumar Meena",
-      nameHi: "श्री राजेश कुमार मीणा",
+      name: "Sh. Ramlal",
+      nameHi: "श्री रामलाल",
       designationEn: "Physical Education Teacher (PTI)",
       designationHi: "शारीरिक शिक्षक (पीटीआई)",
-      subjectEn: "Sports & Athletics",
-      subjectHi: "खेलकूद एवं योग",
-      photo: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=300&q=80"
+      subjectEn: "Sports, Yoga & Athletics",
+      subjectHi: "खेलकूद, योग एवं एथलेटिक्स",
+      photo: "assets/images/faculty/ramlal-pti.jpg"
     },
     {
-      name: "Smt. Kavita Bishnoi",
-      nameHi: "श्रीमती कविता बिश्नोई",
-      designationEn: "Senior Teacher (English)",
-      designationHi: "वरिष्ठ अध्यापक (अंग्रेजी)",
-      subjectEn: "English Language & Lit.",
-      subjectHi: "अंग्रेजी भाषा व साहित्य",
-      photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80"
+      name: "Smt. Anju Bala",
+      nameHi: "श्रीमती अंजू बाला",
+      designationEn: "Senior Teacher (Grade II)",
+      designationHi: "वरिष्ठ अध्यापक (द्वितीय श्रेणी)",
+      subjectEn: "Hindi Language & Literature",
+      subjectHi: "हिन्दी भाषा एवं साहित्य",
+      photo: "assets/images/faculty/anju-bala.jpg"
     },
     {
-      name: "Sh. Gurpreet Singh",
-      nameHi: "श्री गुरप्रीत सिंह",
-      designationEn: "Teacher (Grade III)",
-      designationHi: "अध्यापक (तृतीय श्रेणी)",
+      name: "Sh. Ashok Kumar",
+      nameHi: "श्री अशोक कुमार",
+      designationEn: "Senior Teacher (Grade II)",
+      designationHi: "वरिष्ठ अध्यापक (द्वितीय श्रेणी)",
+      subjectEn: "English Language & Grammar",
+      subjectHi: "अंग्रेजी भाषा व व्याकरण",
+      photo: "assets/images/faculty/ashok-kumar.jpg"
+    },
+    {
+      name: "Smt. Kusum Bala",
+      nameHi: "श्रीमती कुसुम बाला",
+      designationEn: "Senior Teacher (Grade II)",
+      designationHi: "वरिष्ठ अध्यापक (द्वितीय श्रेणी)",
+      subjectEn: "General Science & Lab",
+      subjectHi: "सामान्य विज्ञान एवं प्रयोगशाला",
+      photo: "assets/images/faculty/kusum-bala.jpg"
+    },
+    {
+      name: "Sh. Parveen Lal Sharma",
+      nameHi: "श्री परवीन लाल शर्मा",
+      designationEn: "Senior Teacher (Grade II)",
+      designationHi: "वरिष्ठ अध्यापक (द्वितीय श्रेणी)",
+      subjectEn: "Mathematics",
+      subjectHi: "गणित शिक्षण",
+      photo: "assets/images/faculty/parveen-sharma.jpg"
+    },
+    {
+      name: "Smt. Paramjeet Kaur",
+      nameHi: "श्रीमती परमजीत कौर",
+      designationEn: "Senior Teacher (Grade II)",
+      designationHi: "वरिष्ठ अध्यापक (द्वितीय श्रेणी)",
+      subjectEn: "Punjabi (Third Language)",
+      subjectHi: "पंजाबी (तृतीय भाषा)",
+      photo: "assets/images/faculty/paramjeet-kaur.jpg"
+    },
+    {
+      name: "Smt. Champawati",
+      nameHi: "श्रीमती चम्पावती",
+      designationEn: "Teacher Level 2",
+      designationHi: "अध्यापक लेवल-2",
+      subjectEn: "Hindi",
+      subjectHi: "हिन्दी शिक्षण",
+      photo: "assets/images/faculty/champawati.jpg"
+    },
+    {
+      name: "Smt. Ruchika Kaushik",
+      nameHi: "श्रीमती रुचिका कौशिक",
+      designationEn: "Teacher Level 2 (Special Education)",
+      designationHi: "अध्यापक लेवल-2 (विशेष शिक्षा)",
+      subjectEn: "English & Inclusive Learning",
+      subjectHi: "अंग्रेजी एवं समावेशी शिक्षा",
+      photo: "assets/images/faculty/ruchika-kaushik.jpg"
+    },
+    {
+      name: "Sh. Bharat Chander",
+      nameHi: "श्री भरत चन्दर",
+      designationEn: "Teacher Level 1",
+      designationHi: "अध्यापक लेवल-1",
       subjectEn: "Primary Wing Coordinator",
-      subjectHi: "प्राथमिक प्रभाग प्रभारी",
-      photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80"
+      subjectHi: "प्राथमिक शिक्षा प्रभाग",
+      photo: "assets/images/faculty/bharat-chander.jpg"
+    },
+    {
+      name: "Sh. Ajit Kumar",
+      nameHi: "श्री अजीत कुमार",
+      designationEn: "Teacher Level 1",
+      designationHi: "अध्यापक लेवल-1",
+      subjectEn: "Primary Education",
+      subjectHi: "प्राथमिक शिक्षा प्रभाग",
+      photo: "assets/images/faculty/ajit-kumar.jpg"
+    },
+    {
+      name: "Sh. Mohan Verma",
+      nameHi: "श्री मोहन वर्मा",
+      designationEn: "Assistant Administrative Officer",
+      designationHi: "सहायक प्रशासनिक अधिकारी (AAO)",
+      subjectEn: "School Office & Accounts",
+      subjectHi: "विद्यालय कार्यालय एवं लेखा प्रशासन",
+      photo: "assets/images/faculty/mohan-verma.jpg"
     }
   ],
 
