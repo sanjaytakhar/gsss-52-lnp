@@ -1540,3 +1540,181 @@ body {
   color: var(--text-primary) !important;
   border-color: rgba(15, 23, 42, 0.15) !important;
 }
+
+/* ==========================================================================
+   MOBILE-FIRST APP EXPERIENCE & LIQUID GLASS BOTTOM DOCK
+   ========================================================================== */
+
+/* Mobile Bottom Navigation Dock (Native App Feel) */
+.mobile-bottom-dock {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 250;
+  padding: 8px 16px 14px;
+  background: rgba(10, 18, 32, 0.85);
+  backdrop-filter: saturate(200%) blur(28px);
+  -webkit-backdrop-filter: saturate(200%) blur(28px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-dock {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  /* Add bottom padding to body so content does not get covered by bottom dock */
+  body {
+    padding-bottom: 74px;
+  }
+
+  .scroll-top-btn {
+    bottom: 84px !important;
+  }
+}
+
+.dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  transition: all var(--dur-fast);
+  padding: 4px 10px;
+  border-radius: var(--r-md);
+  position: relative;
+}
+
+.dock-icon {
+  font-size: 1.25rem;
+  transition: transform var(--dur-fast);
+}
+
+.dock-item:hover,
+.dock-item.active {
+  color: var(--brand-gold);
+}
+
+.dock-item:hover .dock-icon,
+.dock-item.active .dock-icon {
+  transform: translateY(-2px) scale(1.1);
+  color: var(--brand-gold);
+  filter: drop-shadow(0 0 8px rgba(255, 179, 0, 0.5));
+}
+
+.dock-badge-dot {
+  position: absolute;
+  top: 3px;
+  right: 14px;
+  width: 7px;
+  height: 7px;
+  background: #EF4444;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #EF4444;
+}
+
+/* Light Theme Dock */
+[data-theme="light"] .mobile-bottom-dock {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-top-color: rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 -8px 32px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="light"] .dock-item {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .dock-item:hover,
+[data-theme="light"] .dock-item.active {
+  color: var(--brand-navy) !important;
+}
+
+[data-theme="light"] .dock-item:hover .dock-icon,
+[data-theme="light"] .dock-item.active .dock-icon {
+  color: var(--brand-navy) !important;
+}
+
+/* Mobile Quick Action Pill Chips in Hero */
+.mobile-quick-chips {
+  display: none;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+@media (max-width: 768px) {
+  .mobile-quick-chips {
+    display: flex;
+  }
+}
+
+.quick-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--r-full);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all var(--dur-fast);
+}
+
+.quick-chip:hover {
+  background: var(--brand-gold);
+  color: #0A1220;
+  border-color: var(--brand-gold);
+}
+
+[data-theme="light"] .quick-chip {
+  background: rgba(13, 71, 161, 0.08);
+  border-color: rgba(13, 71, 161, 0.15);
+  color: var(--brand-navy);
+}
+
+/* Mobile Touch Optimization for Tables and Tabs */
+@media (max-width: 640px) {
+  .notice-filter-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-tab {
+    flex-shrink: 0;
+    font-size: 0.78rem;
+    padding: 6px 14px;
+  }
+
+  .hero-title {
+    font-size: 2.1rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .section-title {
+    font-size: 1.75rem !important;
+  }
+
+  .principal-media {
+    padding: var(--s6) !important;
+  }
+
+  .principal-content {
+    padding: var(--s6) !important;
+  }
+}

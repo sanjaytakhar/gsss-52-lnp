@@ -66,15 +66,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Navbar Scroll Shadow
+  // Navbar Scroll Shadow & Mobile Dock Active State Tracking
+  const sections = document.querySelectorAll('section[id]');
+  const dockItems = document.querySelectorAll('.dock-item');
+
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
+    const scrollY = window.scrollY;
+    if (scrollY > 40) {
       if (mainNavbar) mainNavbar.classList.add('navbar-scrolled');
       if (scrollTopBtn) scrollTopBtn.classList.add('visible');
     } else {
       if (mainNavbar) mainNavbar.classList.remove('navbar-scrolled');
       if (scrollTopBtn) scrollTopBtn.classList.remove('visible');
     }
+
+    // Update active mobile dock tab based on visible section
+    sections.forEach(current => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - 120;
+      const sectionId = current.getAttribute('id');
+
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        dockItems.forEach(item => {
+          if (item.getAttribute('href') === `#${sectionId}`) {
+            item.classList.add('active');
+          } else if (item.getAttribute('href')?.startsWith('#')) {
+            item.classList.remove('active');
+          }
+        });
+      }
+    });
   });
 
   if (scrollTopBtn) {
