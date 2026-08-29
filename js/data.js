@@ -158,58 +158,7 @@ window.SCHOOL_DATA = {
     }
   ],
 
-  notices: [
-    {
-      id: 101,
-      category: "exams",
-      titleEn: "RBSE Class 10th & 12th Board Examination Time Table 2026-27",
-      titleHi: "आरबीएसई कक्षा 10वीं व 12वीं मुख्य बोर्ड परीक्षा समय सारणी 2026-27",
-      date: "2026-05-20",
-      isNew: true,
-      fileSize: "420 KB",
-      docType: "PDF"
-    },
-    {
-      id: 102,
-      category: "schemes",
-      titleEn: "Application open for Pre-Matric & Post-Matric State Scholarships",
-      titleHi: "पूर्व-मैट्रिक एवं उत्तर-मैट्रिक राज्य छात्रवृत्ति हेतु ऑनलाइन आवेदन प्रारंभ",
-      date: "2026-05-18",
-      isNew: true,
-      fileSize: "650 KB",
-      docType: "PDF"
-    },
-    {
-      id: 103,
-      category: "circulars",
-      titleEn: "Notice regarding Free School Uniform & Sewing Assistance Distribution",
-      titleHi: "निःशुल्क स्कूल यूनिफॉर्म एवं सिलाई सहायता राशि वितरण सम्बन्धी दिशा-निर्देश",
-      date: "2026-05-15",
-      isNew: false,
-      fileSize: "310 KB",
-      docType: "PDF"
-    },
-    {
-      id: 104,
-      category: "sports",
-      titleEn: "Selection Trials for 68th District Level Kabbadi & Volleyball Team",
-      titleHi: "68वीं जिला स्तरीय कबड्डी एवं वॉलीबॉल प्रतियोगिता हेतु चयन ट्रायल सूचना",
-      date: "2026-05-10",
-      isNew: false,
-      fileSize: "280 KB",
-      docType: "PDF"
-    },
-    {
-      id: 105,
-      category: "circulars",
-      titleEn: "Shala Darpan Citizen Portal Direct Admission Verification Guidelines",
-      titleHi: "शाला दर्पण पोर्टल पर नवीन प्रवेश सत्यापन एवं जन आधार प्रमाणीकरण निर्देश",
-      date: "2026-05-02",
-      isNew: false,
-      fileSize: "540 KB",
-      docType: "PDF"
-    }
-  ],
+  notices: [],
 
   academicStreams: [
     {

@@ -337,8 +337,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (filtered.length === 0) {
       noticesTableBody.innerHTML = `
         <tr>
-          <td colspan="4" class="text-center py-4 text-muted">
-            ${currentLang === 'hi' ? 'इस श्रेणी में कोई सूचना उपलब्ध नहीं है।' : 'No notices found in this category.'}
+          <td colspan="4" class="text-center" style="padding: 48px 20px;">
+            <div style="font-size: 2.2rem; color: var(--brand-gold); margin-bottom: 12px; opacity: 0.8;">
+              <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px;">
+              ${currentLang === 'hi' ? 'वर्तमान में कोई नवीन सूचना उपलब्ध नहीं है' : 'No Active Notices at This Moment'}
+            </h4>
+            <p style="font-size: 0.85rem; max-width: 460px; margin: 0 auto; color: var(--text-secondary);">
+              ${currentLang === 'hi' ? 'नवीन विभागीय आदेश, समय सारणी एवं परिपत्र शीघ्र ही यहाँ प्रकाशित किए जाएंगे।' : 'New official departmental orders, exam schedules, and circulars will be published here.'}
+            </p>
           </td>
         </tr>
       `;
