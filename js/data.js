@@ -286,7 +286,7 @@ window.SCHOOL_DATA = {
       titleHi: "खेल परिसर एवं एथलेटिक मैदान",
       descEn: "Dedicated tracks and courts for Kabbadi, Kho-Kho, Volleyball, Cricket, Badminton and Track & Field.",
       descHi: "कबड्डी, खो-खो, वॉलीबॉल, क्रिकेट और एथलेटिक्स हेतु विशाल खेल मैदान व खेल सामग्री।",
-      image: "assets/images/campus/campus-panoramic.jpg"
+      image: "assets/images/events/school-sports-team.jpg"
     },
     {
       titleEn: "RO Purified Drinking Water & Solar Power",
@@ -450,11 +450,11 @@ window.SCHOOL_DATA = {
     }
   ],
 
-      gallery: [
+        gallery: [
     {
       id: 1,
       category: "campus",
-      titleEn: "Grand Entrance Gate & GSSS 52 LNP (Manjhuwas) Campus",
+      titleEn: "Grand Entrance Gate & GSSS 52 LNP Main Campus",
       titleHi: "मुख्य प्रवेश द्वार एवं विद्यालय परिसर (मांझूवास)",
       tagEn: "Main Entrance",
       tagHi: "मुख्य द्वार",
@@ -462,15 +462,42 @@ window.SCHOOL_DATA = {
     },
     {
       id: 2,
-      category: "cultural",
-      titleEn: "Morning Prayer Assembly & Yoga Session in Courtyard",
-      titleHi: "सर्वधर्म प्रार्थना सभा एवं योग/ध्यान सत्र",
-      tagEn: "Morning Assembly",
-      tagHi: "प्रार्थना सभा",
-      image: "assets/images/events/morning-prayer-assembly.jpg"
+      category: "campus",
+      titleEn: "Administrative Block (प्रशासनिक प्रभाग) - Faculty & Student Council",
+      titleHi: "प्रशासनिक प्रभाग - विद्यालय शिक्षक एवं छात्र परिषद",
+      tagEn: "Admin Block",
+      tagHi: "प्रशासनिक प्रभाग",
+      image: "assets/images/campus/administrative-block-staff-students.jpg"
     },
     {
       id: 3,
+      category: "sports",
+      titleEn: "School Athletics, Kabbadi & Tournament Team with Physical Education Teacher",
+      titleHi: "विद्यालय खेलकूद, एथलेटिक्स व कबड्डी टीम मय शारीरिक शिक्षक",
+      tagEn: "Sports Team",
+      tagHi: "खेलकूद टीम",
+      image: "assets/images/events/school-sports-team.jpg"
+    },
+    {
+      id: 4,
+      category: "science",
+      titleEn: "ICT Smart Computer Lab & Practical Digital Learning Session",
+      titleHi: "आईसीटी कंप्यूटर लैब व डिजिटल क्लासरूम शिक्षण",
+      tagEn: "Computer Lab",
+      tagHi: "कंप्यूटर लैब",
+      image: "assets/images/campus/ict-computer-lab.jpg"
+    },
+    {
+      id: 5,
+      category: "cultural",
+      titleEn: "'Say No To Plastics' Environmental & Eco-Awareness Rally",
+      titleHi: "'से नो टू प्लास्टिक' पर्यावरण व जन-जागरूकता अभियान",
+      tagEn: "Eco Awareness",
+      tagHi: "पर्यावरण जागरूकता",
+      image: "assets/images/events/say-no-to-plastic-rally.jpg"
+    },
+    {
+      id: 6,
       category: "cultural",
       titleEn: "Grand Annual Day & National Festival Gathering under Canopy",
       titleHi: "भव्य वार्षिक उत्सव एवं राष्ट्रीय पर्व समारोह",
@@ -479,25 +506,43 @@ window.SCHOOL_DATA = {
       image: "assets/images/events/annual-day-cultural-fest.jpg"
     },
     {
-      id: 4,
-      category: "science",
-      titleEn: "ICT Smart Computer Lab & Practical Digital Learning",
-      titleHi: "आईसीटी कंप्यूटर लैब व डिजिटल क्लासरूम शिक्षण",
-      tagEn: "Computer Lab",
-      tagHi: "कंप्यूटर लैब",
-      image: "assets/images/campus/ict-computer-lab.jpg"
+      id: 7,
+      category: "cultural",
+      titleEn: "Morning Prayer Assembly (सर्वधर्म प्रार्थना सभा) & Yoga Session",
+      titleHi: "सर्वधर्म प्रार्थना सभा एवं योग/ध्यान सत्र",
+      tagEn: "Morning Assembly",
+      tagHi: "प्रार्थना सभा",
+      image: "assets/images/events/morning-prayer-assembly.jpg"
     },
     {
-      id: 5,
+      id: 8,
+      category: "cultural",
+      titleEn: "National Tricolor Flag Day & Cultural Celebration by Teachers & Students",
+      titleHi: "राष्ट्रीय ध्वज तिरंगा उत्सव एवं सांस्कृतिक समारोह",
+      tagEn: "National Festival",
+      tagHi: "राष्ट्रीय पर्व",
+      image: "assets/images/events/national-flag-celebration.jpg"
+    },
+    {
+      id: 9,
       category: "campus",
-      titleEn: "Student Environmental Awareness & Tree Plantation Drive",
-      titleHi: "पर्यावरण चेतना एवं हरियालो राजस्थान पौधरोपण अभियान",
+      titleEn: "Eco-Club Tree Plantation Campaign by Girl Students",
+      titleHi: "इको-क्लब हरियालो राजस्थान बालिका वृक्षारोपण अभियान",
+      tagEn: "Eco Club",
+      tagHi: "इको क्लब",
+      image: "assets/images/events/tree-plantation-girls-group.jpg"
+    },
+    {
+      id: 10,
+      category: "campus",
+      titleEn: "Boy Students Environmental Awareness & Tree Plantation Drive",
+      titleHi: "पर्यावरण चेतना एवं छात्र पौधरोपण अभियान",
       tagEn: "Tree Plantation",
       tagHi: "वृक्षारोपण",
       image: "assets/images/events/boys-tree-plantation-drive.jpg"
     },
     {
-      id: 6,
+      id: 11,
       category: "campus",
       titleEn: "Open-Air Courtyard Student Assembly & Mentorship Session",
       titleHi: "खुले प्रांगण में विद्यार्थी सभा एवं मार्गदर्शन सत्र",
@@ -506,27 +551,9 @@ window.SCHOOL_DATA = {
       image: "assets/images/events/courtyard-assembly-session.jpg"
     },
     {
-      id: 7,
-      category: "cultural",
-      titleEn: "National Flag Tricolor Rally (Tiranga Yatra) by Students & Teachers",
-      titleHi: "तिरंगा प्रभात फेरी एवं राष्ट्रीय पर्व उत्सव",
-      tagEn: "National Festival",
-      tagHi: "राष्ट्रीय पर्व",
-      image: "assets/images/events/tiranga-rally-gate.jpg"
-    },
-    {
-      id: 8,
+      id: 12,
       category: "campus",
-      titleEn: "Eco-Club Tree Plantation Campaign by Girl Students",
-      titleHi: "इको-क्लब बालिका वृक्षारोपण एवं हरित विद्यालय अभियान",
-      tagEn: "Eco Club",
-      tagHi: "इको क्लब",
-      image: "assets/images/events/tree-plantation-ecoclub.jpg"
-    },
-    {
-      id: 9,
-      category: "campus",
-      titleEn: "Sprawling Green School Grounds & Heritage Banyan Tree",
+      titleEn: "Lush Green School Grounds & Heritage Banyan Tree Landscape",
       titleHi: "विशाल हरित विद्यालय प्रांगण एवं प्राचीन बरगद वृक्ष",
       tagEn: "Green Campus",
       tagHi: "हरित परिसर",
