@@ -20,6 +20,9 @@ window.SCHOOL_DATA = {
     shalaDarpanCode: "217004",
     shalaDarpanUrl: "https://rajshaladarpan.rajasthan.gov.in",
     principalHi: "श्रीमती ममता (प्रधानाचार्य)",
+    googleMapsUrl: "https://maps.app.goo.gl/WYmpY321NdgS8XFQ7",
+    plusCode: "MHPM+6R Padampur, Rajasthan",
+    coordinates: "29.6855771, 73.8570885",
   },
 
   stats: [
