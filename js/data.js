@@ -9,15 +9,15 @@ window.SCHOOL_DATA = {
     schoolNameHi: "राजकीय उच्च माध्यमिक विद्यालय 52 LNP (मांझूवास)",
     motto: "Inspire • Learn • Lead",
     mottoHi: "प्रेरणा • ज्ञान • नेतृत्व",
-    udise: "08010205201",
+    udise: "08010410907",
     board: "RBSE (Rajasthan Board of Secondary Education, Ajmer)",
     established: "1968",
-    address: "Village 52 LNP (Manjhuwas), Tehsil Padampur, District Sri Ganganagar, Rajasthan - 335041",
-    addressHi: "ग्राम 52 एलएनपी (मांझूवास), तहसील पदमपुर, जिला श्रीगंगानगर, राजस्थान - 335041",
+    address: "Village 52 LNP (Manjhuwas), Tehsil Padampur, District Sri Ganganagar, Rajasthan - 335025",
+    addressHi: "ग्राम 52 एलएनपी (मांझूवास), तहसील पदमपुर, जिला श्रीगंगानगर, राजस्थान - 335025",
     phone: "+91 154 2852052 / +91 94140 XXXXX",
     email: "gsss52lnp.sriganganagar@gmail.com",
     principal: "Smt. Mamta",
-    shalaDarpanCode: "217004",
+    shalaDarpanCode: "212024",
     shalaDarpanUrl: "https://rajshaladarpan.rajasthan.gov.in",
     principalHi: "श्रीमती ममता (प्रधानाचार्य)",
     googleMapsUrl: "https://maps.app.goo.gl/WYmpY321NdgS8XFQ7",
@@ -26,9 +26,9 @@ window.SCHOOL_DATA = {
   },
 
   stats: [
-    { num: "950+", labelEn: "Enrolled Students", labelHi: "नामांकित विद्यार्थी" },
+    { num: "360+", labelEn: "Enrolled Students", labelHi: "नामांकित विद्यार्थी" },
     { num: "100%", labelEn: "RBSE Board Pass Rate", labelHi: "बोर्ड परीक्षा परिणाम" },
-    { num: "35+", labelEn: "Dedicated Faculty", labelHi: "योग्य शिक्षक एवं स्टाफ" },
+    { num: "23", labelEn: "Dedicated Faculty", labelHi: "योग्य शिक्षक एवं स्टाफ" },
     { num: "18+", labelEn: "Smart Labs & Classrooms", labelHi: "स्मार्ट कक्षाएं व प्रयोगशालाएं" }
   ],
 
@@ -425,7 +425,7 @@ window.SCHOOL_DATA = {
   boardResults10th2026: {
     "year": "2026",
     "class": "10th",
-    "schoolCode": "1240860 / 217004",
+    "schoolCode": "1240860 / 212024",
     "schoolName": "Govt. Sr. Sec. School 52 LNP (Manjhuwas), Padampur, Sri Ganganagar",
     "summary": {
         "totalCandidates": 53,
@@ -1357,7 +1357,7 @@ window.SCHOOL_DATA = {
 
   boardResults2026: {
     year: '2026',
-    schoolCode: '1240860 / 217004',
+    schoolCode: '1240860 / 212024',
     schoolName: 'Govt. Sr. Sec. School 52 LNP (Manjhuwas), Padampur, Sri Ganganagar',
     summary: {
       totalCandidates: 32,

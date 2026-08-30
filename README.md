@@ -2,7 +2,7 @@
 **राजकीय उच्च माध्यमिक विद्यालय 52 एलएनपी (श्रीगंगानगर, राजस्थान)**
 
 Affiliated with **Board of Secondary Education, Rajasthan (RBSE Ajmer)**  
-UDISE+ Code: **08010205201** | Established: **1968**
+UDISE+ Code: **08010410907** | Established: **1968**
 
 ---
 

@@ -287,7 +287,7 @@ window.openStudentScorecard = function(rollNo) {
           GOVT. SR. SEC. SCHOOL 52 LNP (MANJHUWAS)
         </h3>
         <div style="font-size: 0.8rem; color: var(--text-muted);">
-          School Code: 1240860 / 217004 • District: Sri Ganganagar • Exam Year: 2026
+          School Code: 1240860 / 212024 • District: Sri Ganganagar • Exam Year: 2026
         </div>
       </div>
 

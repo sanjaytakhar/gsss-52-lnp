@@ -598,7 +598,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <div><strong>${currentLang === 'hi' ? 'कक्षा / संकाय:' : 'Applying For:'}</strong> ${sClass}</div>
                   <div><strong>${currentLang === 'hi' ? 'अभिभावक का नाम:' : 'Parent / Guardian:'}</strong> ${pName}</div>
                   <div><strong>${currentLang === 'hi' ? 'संपर्क मोबाइल:' : 'Contact Mobile:'}</strong> ${pMobile}</div>
-                  <div><strong>${currentLang === 'hi' ? 'विद्यालय:' : 'School:'}</strong> Govt. Sr. Sec. School 52 LNP (UDISE: 08010205201)</div>
+                  <div><strong>${currentLang === 'hi' ? 'विद्यालय:' : 'School:'}</strong> Govt. Sr. Sec. School 52 LNP (UDISE: 08010410907)</div>
                 </div>
               </div>
             `;
