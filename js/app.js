@@ -122,9 +122,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', () => toggleDrawer(false));
     mobileDrawerOverlay.addEventListener('click', () => toggleDrawer(false));
 
+    // Close when pressing Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+        toggleDrawer(false);
+      }
+    });
+
     // Close when clicking link in drawer
     document.querySelectorAll('.drawer-link').forEach(link => {
-      link.addEventListener('click', () => toggleDrawer(false));
+      link.addEventListener('click', () => {
+        document.querySelectorAll('.drawer-link').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        toggleDrawer(false);
+      });
     });
   }
 
@@ -132,6 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
   openAdmissionBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+      if (mobileDrawer && mobileDrawer.classList.contains('open')) {
+        mobileDrawer.classList.remove('open');
+        mobileDrawerOverlay.classList.remove('open');
+      }
       if (admissionModal) {
         admissionModal.classList.add('open');
         document.body.style.overflow = 'hidden';

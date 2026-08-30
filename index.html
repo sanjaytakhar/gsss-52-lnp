@@ -191,31 +191,87 @@
 
   <!-- Mobile Drawer -->
   <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
-  <aside class="mobile-drawer" id="mobileDrawer">
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation Menu">
     <div class="drawer-header">
       <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="assets/logo.png" alt="Education Department Rajasthan Emblem" style="width: 38px; height: 38px; object-fit: contain;">
-        <strong style="font-size: 1.1rem; color: var(--color-primary-dark);">GSSS 52 LNP (मांझूवास)</strong>
+        <img src="assets/logo.png" alt="Education Department Rajasthan Emblem" style="width: 36px; height: 36px; object-fit: contain;">
+        <div>
+          <div style="font-weight: 800; font-size: 0.96rem; color: var(--color-primary-dark);" data-i18n-en="GSSS 52 LNP" data-i18n-hi="रा.उ.मा.वि. 52 एलएनपी">GSSS 52 LNP</div>
+          <div style="font-size: 0.72rem; color: var(--brand-sky);" data-i18n-en="Model Sr. Sec. School" data-i18n-hi="मॉडल उच्च माध्यमिक विद्यालय">Model Sr. Sec. School</div>
+        </div>
       </div>
-      <button class="drawer-close-btn" id="closeDrawerBtn">&times;</button>
+      <button class="drawer-close-btn" id="closeDrawerBtn" aria-label="Close Drawer Menu">&times;</button>
     </div>
+
     <div class="drawer-menu">
-      <a href="#home" class="drawer-link" data-i18n-en="Home" data-i18n-hi="मुख्य पृष्ठ">Home</a>
-      <a href="#about" class="drawer-link" data-i18n-en="About School" data-i18n-hi="विद्यालय परिचय">About School</a>
-      <a href="#academics" class="drawer-link" data-i18n-en="Academics & Streams" data-i18n-hi="शैक्षणिक संकाय">Academics & Streams</a>
-      <a href="#admissions" class="drawer-link" data-i18n-en="Admissions 2026-27" data-i18n-hi="प्रवेश 2026-27">Admissions 2026-27</a>
-      <a href="#student-life" class="drawer-link" data-i18n-en="Student Life & Sports" data-i18n-hi="खेलकूद व गतिविधियां">Student Life & Sports</a>
-      <a href="#facilities" class="drawer-link" data-i18n-en="Campus & Smart Labs" data-i18n-hi="परिसर व स्मार्ट लैब">Campus & Smart Labs</a>
-      <a href="#schemes" class="drawer-link" data-i18n-en="Govt. Schemes & Welfare" data-i18n-hi="सरकारी योजनाएं">Govt. Schemes & Welfare</a>
-      <a href="#faculty" class="drawer-link" data-i18n-en="Faculty Directory" data-i18n-hi="शिक्षक वृन्द">Faculty Directory</a>
-      <a href="#notices" class="drawer-link" data-i18n-en="Notice Board & Circulars" data-i18n-hi="सूचना पट्ट">Notice Board & Circulars</a>
-      <a href="#gallery" class="drawer-link" data-i18n-en="Photo Gallery" data-i18n-hi="छायाचित्र गैलरी">Photo Gallery</a>
-      <a href="#contact" class="drawer-link" data-i18n-en="Contact & Location" data-i18n-hi="संपर्क व पता">Contact & Location</a>
-      <div style="margin-top: 16px;">
-        <button class="btn btn-primary w-100 open-admission-modal" style="width: 100%;">
-          <i class="fa-solid fa-pen-nib me-1"></i>
+      <a href="#home" class="drawer-link active">
+        <i class="fa-solid fa-house"></i>
+        <span data-i18n-en="Home" data-i18n-hi="मुख्य पृष्ठ">Home</span>
+      </a>
+      <a href="#about" class="drawer-link">
+        <i class="fa-solid fa-school"></i>
+        <span data-i18n-en="About School" data-i18n-hi="विद्यालय परिचय">About School</span>
+      </a>
+      <a href="#academics" class="drawer-link">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span data-i18n-en="Academics & Streams" data-i18n-hi="शैक्षणिक संकाय">Academics & Streams</span>
+      </a>
+      <a href="#admissions" class="drawer-link">
+        <i class="fa-solid fa-file-signature"></i>
+        <span data-i18n-en="Admissions 2026-27" data-i18n-hi="प्रवेश 2026-27">Admissions 2026-27</span>
+      </a>
+      <a href="#results" class="drawer-link">
+        <i class="fa-solid fa-trophy"></i>
+        <span data-i18n-en="10th & 12th Results" data-i18n-hi="10वीं व 12वीं परीक्षा परिणाम">10th & 12th Results</span>
+      </a>
+      <a href="#student-life" class="drawer-link">
+        <i class="fa-solid fa-medal"></i>
+        <span data-i18n-en="Student Life & Events" data-i18n-hi="खेलकूद व गतिविधियां">Student Life & Events</span>
+      </a>
+      <a href="#facilities" class="drawer-link">
+        <i class="fa-solid fa-microchip"></i>
+        <span data-i18n-en="Campus & Smart Labs" data-i18n-hi="परिसर व स्मार्ट लैब">Campus & Smart Labs</span>
+      </a>
+      <a href="#schemes" class="drawer-link">
+        <i class="fa-solid fa-hands-holding-child"></i>
+        <span data-i18n-en="Govt. Schemes & Welfare" data-i18n-hi="सरकारी योजनाएं">Govt. Schemes & Welfare</span>
+      </a>
+      <a href="#faculty" class="drawer-link">
+        <i class="fa-solid fa-chalkboard-user"></i>
+        <span data-i18n-en="Faculty Directory" data-i18n-hi="शिक्षक वृन्द">Faculty Directory</span>
+      </a>
+      <a href="#notices" class="drawer-link">
+        <i class="fa-solid fa-bullhorn"></i>
+        <span data-i18n-en="Notice Board & Circulars" data-i18n-hi="सूचना पट्ट">Notice Board & Circulars</span>
+      </a>
+      <a href="#gallery" class="drawer-link">
+        <i class="fa-solid fa-images"></i>
+        <span data-i18n-en="Photo Gallery" data-i18n-hi="छायाचित्र गैलरी">Photo Gallery</span>
+      </a>
+      <a href="#contact" class="drawer-link">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <span data-i18n-en="Contact & Location" data-i18n-hi="संपर्क व पता">Contact & Location</span>
+      </a>
+
+      <div style="margin-top: 14px;">
+        <button class="btn btn-primary w-100 open-admission-modal" style="width: 100%; box-shadow: 0 4px 16px rgba(173,139,115,0.4);">
+          <i class="fa-solid fa-pencil me-1"></i>
           <span data-i18n-en="Online Admission Form" data-i18n-hi="ऑनलाइन प्रवेश फॉर्म">Online Admission Form</span>
         </button>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div style="display: flex; gap: 8px;">
+        <a href="tel:+911542852052" class="btn btn-secondary btn-sm" style="flex: 1; text-decoration: none;">
+          <i class="fa-solid fa-phone me-1"></i> Call Office
+        </a>
+        <a href="https://rajshaladarpan.rajasthan.gov.in" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="flex: 1; text-decoration: none;">
+          <i class="fa-solid fa-graduation-cap me-1"></i> Shala Darpan
+        </a>
+      </div>
+      <div style="font-size: 0.74rem; text-align: center; color: var(--text-muted);">
+        Shala Darpan: <strong>217004</strong> • UDISE: <strong>08010205201</strong>
       </div>
     </div>
   </aside>
