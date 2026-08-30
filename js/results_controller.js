@@ -1,421 +1,242 @@
 /**
  * RBSE BOARD EXAMINATION RESULTS 2026 CONTROLLER
- * Supports: Class 10th Secondary (53 Students) & Class 12th Senior Secondary (32 Students)
- * School: Govt. Sr. Sec. School 52 LNP (Manjhuwas), Padampur, Sri Ganganagar
+ * EXCLUSIVE MERIT TOPPERS SHOWCASE
+ * School: Govt. Sr. Sec. School 52 LNP (Manjhuwas), Padampur, Sri Ganganagar (Code: 212024)
  */
 
-window.currentClassTab = '10th'; // '10th' or '12th'
-window.currentResultSubTab = '10th-toppers'; // '10th-toppers', '10th-all', '12th-toppers', '12th-arts', '12th-science'
+window.currentClassTab = 'all'; // 'all', '10th', '12th'
 
 window.switchResultClass = function(cls) {
   window.currentClassTab = cls;
-  if (cls === '10th') {
-    window.currentResultSubTab = '10th-toppers';
-  } else {
-    window.currentResultSubTab = '12th-toppers';
-  }
 
   document.querySelectorAll('.class-tab-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.class === cls);
   });
 
-  renderSubTabButtons();
-  renderBoardResultTable();
+  renderToppersShowcase();
 };
 
-window.switchResultSubTab = function(subTab) {
-  window.currentResultSubTab = subTab;
-  document.querySelectorAll('.res-subtab-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.subtab === subTab);
-  });
-  renderBoardResultTable();
-};
-
-window.renderSubTabButtons = function() {
-  const container = document.getElementById('resultSubTabsContainer');
-  if (!container) return;
-
-  if (window.currentClassTab === '10th') {
-    container.innerHTML = `
-      <button class="filter-tab res-subtab-btn ${window.currentResultSubTab === '10th-toppers' ? 'active' : ''}" data-subtab="10th-toppers" onclick="switchResultSubTab('10th-toppers')">
-        <i class="fa-solid fa-trophy me-1"></i> 10th Merit Toppers (मेरिट सूची)
-      </button>
-      <button class="filter-tab res-subtab-btn ${window.currentResultSubTab === '10th-all' ? 'active' : ''}" data-subtab="10th-all" onclick="switchResultSubTab('10th-all')">
-        <i class="fa-solid fa-users me-1"></i> Class 10th All Students (53 Students - 100% Pass)
-      </button>
-    `;
-  } else {
-    container.innerHTML = `
-      <button class="filter-tab res-subtab-btn ${window.currentResultSubTab === '12th-toppers' ? 'active' : ''}" data-subtab="12th-toppers" onclick="switchResultSubTab('12th-toppers')">
-        <i class="fa-solid fa-trophy me-1"></i> 12th Merit Toppers (मेरिट सूची)
-      </button>
-      <button class="filter-tab res-subtab-btn ${window.currentResultSubTab === '12th-arts' ? 'active' : ''}" data-subtab="12th-arts" onclick="switchResultSubTab('12th-arts')">
-        <i class="fa-solid fa-palette me-1"></i> 12th Arts (20 Students)
-      </button>
-      <button class="filter-tab res-subtab-btn ${window.currentResultSubTab === '12th-science' ? 'active' : ''}" data-subtab="12th-science" onclick="switchResultSubTab('12th-science')">
-        <i class="fa-solid fa-flask-vial me-1"></i> 12th Science (12 Students)
-      </button>
-    `;
-  }
-};
-
-window.renderBoardResultTable = function() {
+window.renderToppersShowcase = function(searchQuery = '') {
   const container = document.getElementById('boardResultTableContainer');
   if (!container || !window.SCHOOL_DATA) return;
 
   const data10 = window.SCHOOL_DATA.boardResults10th2026;
   const data12 = window.SCHOOL_DATA.boardResults2026;
 
-  // 1. Class 10th Toppers
-  if (window.currentResultSubTab === '10th-toppers' && data10) {
-    container.innerHTML = `
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 20px;">
-        ${data10.toppers.map(t => `
-          <div class="quick-card" style="align-items: flex-start; text-align: left; padding: 20px; position: relative; border-left: 4px solid var(--brand-gold);">
-            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; margin-bottom: 8px;">
-              <span style="background: rgba(255,179,0,0.15); color: var(--brand-gold); font-size: 0.72rem; font-weight: 800; padding: 3px 10px; border-radius: 9999px; border: 1px solid rgba(255,179,0,0.3);">
-                ${t.badge}
-              </span>
-              <span style="font-size: 1.3rem; font-weight: 900; color: var(--brand-gold);">#${t.rank}</span>
-            </div>
-            <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin-bottom: 2px;">${t.name}</h4>
-            <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 12px;">S/D/o Sh. ${t.father} • Roll No: <strong>${t.roll}</strong></p>
-            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08);">
-              <span style="font-size: 0.85rem; color: var(--text-muted);">Class 10th (Secondary)</span>
-              <span style="font-size: 1.1rem; font-weight: 800; color: var(--text-primary);">${t.percent} <small style="font-size: 0.75rem; color: var(--text-muted);">(${t.marks}/${t.maxMarks})</small></span>
-            </div>
-          </div>
-        `).join('')}
-      </div>
-    `;
-  } 
-  // 2. Class 10th All Students Table
-  else if (window.currentResultSubTab === '10th-all' && data10) {
-    container.innerHTML = `
-      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-        <table class="notices-table" style="width: 100%; min-width: 840px;">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Roll No</th>
-              <th>Student Name</th>
-              <th>Father's Name</th>
-              <th>Hindi</th>
-              <th>English</th>
-              <th>Science</th>
-              <th>Soc. Sci</th>
-              <th>Maths</th>
-              <th>3rd Lang</th>
-              <th>Total / 600</th>
-              <th>%</th>
-              <th>Result</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${data10.students.map(s => `
-              <tr style="cursor: pointer;" onclick="openStudentScorecard('${s.roll}')" title="Click to view detailed marksheet">
-                <td style="font-weight: 700; color: var(--brand-gold);">${s.sNo}</td>
-                <td><strong style="color: var(--brand-sky);">${s.roll}</strong></td>
-                <td><strong>${s.name}</strong></td>
-                <td style="color: var(--text-secondary); font-size: 0.85rem;">${s.father}</td>
-                <td>${s.hindi}</td>
-                <td>${s.english}</td>
-                <td>${s.science}</td>
-                <td>${s.socSci}</td>
-                <td>${s.maths}</td>
-                <td><span style="color: var(--brand-gold); font-size: 0.82rem;">${s.thirdLang}</span></td>
-                <td><strong>${s.total}</strong></td>
-                <td><span style="background: rgba(16,185,129,0.15); color: #10B981; padding: 2px 6px; border-radius: 4px; font-weight: 700;">${s.percent}%</span></td>
-                <td><span style="color: #10B981; font-weight: 700; font-size: 0.8rem;"><i class="fa-solid fa-circle-check"></i> ${s.result}</span></td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-      </div>
-    `;
-  }
-  // 3. Class 12th Toppers
-  else if (window.currentResultSubTab === '12th-toppers' && data12) {
-    container.innerHTML = `
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 20px;">
-        ${data12.toppers.map(t => `
-          <div class="quick-card" style="align-items: flex-start; text-align: left; padding: 20px; position: relative; border-left: 4px solid var(--brand-gold);">
-            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; margin-bottom: 8px;">
-              <span style="background: rgba(255,179,0,0.15); color: var(--brand-gold); font-size: 0.72rem; font-weight: 800; padding: 3px 10px; border-radius: 9999px; border: 1px solid rgba(255,179,0,0.3);">
-                ${t.badge}
-              </span>
-              <span style="font-size: 1.3rem; font-weight: 900; color: var(--brand-gold);">#${t.rank}</span>
-            </div>
-            <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin-bottom: 2px;">${t.name}</h4>
-            <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 12px;">S/D/o Sh. ${t.father} • Roll No: <strong>${t.roll}</strong></p>
-            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08);">
-              <span style="font-size: 0.85rem; color: var(--text-muted);">Stream: ${t.stream}</span>
-              <span style="font-size: 1.1rem; font-weight: 800; color: var(--text-primary);">${t.percent} <small style="font-size: 0.75rem; color: var(--text-muted);">(${t.marks}/${t.maxMarks})</small></span>
-            </div>
-          </div>
-        `).join('')}
-      </div>
-    `;
-  }
-  // 4. Class 12th Arts Table
-  else if (window.currentResultSubTab === '12th-arts' && data12) {
-    container.innerHTML = `
-      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-        <table class="notices-table" style="width: 100%; min-width: 720px;">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Roll No</th>
-              <th>Student Name</th>
-              <th>Father's Name</th>
-              <th>Hindi</th>
-              <th>English</th>
-              <th>Pol. Sci</th>
-              <th>Geography</th>
-              <th>Sociology</th>
-              <th>Total / 500</th>
-              <th>%</th>
-              <th>Result</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${data12.artsStudents.map(s => `
-              <tr style="cursor: pointer;" onclick="openStudentScorecard('${s.roll}')" title="Click to view detailed marksheet">
-                <td style="font-weight: 700; color: var(--brand-gold);">${s.sNo}</td>
-                <td><strong style="color: var(--brand-sky);">${s.roll}</strong></td>
-                <td><strong>${s.name}</strong></td>
-                <td style="color: var(--text-secondary); font-size: 0.85rem;">${s.father}</td>
-                <td>${s.hindi}</td>
-                <td>${s.english}</td>
-                <td><span style="color: var(--brand-gold); font-weight: 700;">${s.polSci}</span></td>
-                <td><span style="color: var(--brand-gold); font-weight: 700;">${s.geography}</span></td>
-                <td>${s.sociology}</td>
-                <td><strong>${s.total}</strong></td>
-                <td><span style="background: rgba(16,185,129,0.15); color: #10B981; padding: 2px 6px; border-radius: 4px; font-weight: 700;">${s.percent}%</span></td>
-                <td><span style="color: #10B981; font-weight: 700; font-size: 0.8rem;"><i class="fa-solid fa-circle-check"></i> ${s.result}</span></td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-      </div>
-    `;
-  }
-  // 5. Class 12th Science Table
-  else if (window.currentResultSubTab === '12th-science' && data12) {
-    container.innerHTML = `
-      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-        <table class="notices-table" style="width: 100%; min-width: 720px;">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Roll No</th>
-              <th>Student Name</th>
-              <th>Father's Name</th>
-              <th>Hindi</th>
-              <th>English</th>
-              <th>Physics</th>
-              <th>Chemistry</th>
-              <th>Biology</th>
-              <th>Total / 500</th>
-              <th>%</th>
-              <th>Result</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${data12.scienceStudents.map(s => `
-              <tr style="cursor: pointer;" onclick="openStudentScorecard('${s.roll}')" title="Click to view detailed marksheet">
-                <td style="font-weight: 700; color: var(--brand-gold);">${s.sNo}</td>
-                <td><strong style="color: var(--brand-sky);">${s.roll}</strong></td>
-                <td><strong>${s.name}</strong></td>
-                <td style="color: var(--text-secondary); font-size: 0.85rem;">${s.father}</td>
-                <td>${s.hindi}</td>
-                <td>${s.english}</td>
-                <td>${s.physics}</td>
-                <td><span style="color: var(--brand-gold); font-weight: 700;">${s.chemistry}</span></td>
-                <td><span style="color: var(--brand-gold); font-weight: 700;">${s.biology}</span></td>
-                <td><strong>${s.total}</strong></td>
-                <td><span style="background: rgba(16,185,129,0.15); color: #10B981; padding: 2px 6px; border-radius: 4px; font-weight: 700;">${s.percent}%</span></td>
-                <td><span style="color: #10B981; font-weight: 700; font-size: 0.8rem;"><i class="fa-solid fa-circle-check"></i> ${s.result}</span></td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-      </div>
-    `;
-  }
-};
+  let allToppers = [];
 
-window.openStudentScorecard = function(rollNo) {
-  const data10 = window.SCHOOL_DATA?.boardResults10th2026;
-  const data12 = window.SCHOOL_DATA?.boardResults2026;
-
-  // Search across 10th and 12th
-  let student = null;
-  let isClass10 = false;
-  let isArts = false;
-
-  if (data10) {
-    student = data10.students.find(s => s.roll === rollNo);
-    if (student) isClass10 = true;
+  if (data10 && data10.toppers) {
+    data10.toppers.forEach(t => {
+      allToppers.push({
+        ...t,
+        classLevel: '10th',
+        classTitle: 'Class 10th (Secondary)',
+        classTitleHi: 'कक्षा 10वीं (माध्यमिक)'
+      });
+    });
   }
 
-  if (!student && data12) {
-    student = data12.artsStudents.find(s => s.roll === rollNo);
-    if (student) isArts = true;
-    else student = data12.scienceStudents.find(s => s.roll === rollNo);
+  if (data12 && data12.toppers) {
+    data12.toppers.forEach(t => {
+      allToppers.push({
+        ...t,
+        classLevel: '12th',
+        classTitle: `Class 12th (${t.stream})`,
+        classTitleHi: `कक्षा 12वीं (${t.stream})`
+      });
+    });
   }
 
-  if (!student) {
-    alert('Student record not found for Roll Number: ' + rollNo);
+  // Filter by Class Tab
+  let filtered = allToppers;
+  if (window.currentClassTab === '10th') {
+    filtered = filtered.filter(t => t.classLevel === '10th');
+  } else if (window.currentClassTab === '12th') {
+    filtered = filtered.filter(t => t.classLevel === '12th');
+  }
+
+  // Filter by Search Query if present
+  if (searchQuery.trim()) {
+    const q = searchQuery.trim().toLowerCase();
+    filtered = allToppers.filter(t => 
+      t.name.toLowerCase().includes(q) || 
+      t.roll.toString().includes(q) || 
+      t.father.toLowerCase().includes(q)
+    );
+  }
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div style="text-align: center; padding: 40px 20px; color: var(--text-muted);">
+        <i class="fa-solid fa-user-slash" style="font-size: 2.5rem; margin-bottom: 12px; opacity: 0.5;"></i>
+        <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 4px;">No Topper Found for "${searchQuery}"</h4>
+        <p style="font-size: 0.85rem;">Try searching with a student name or roll number (e.g. 1240860, 2650101, Vaibhav, Manisha)</p>
+      </div>
+    `;
     return;
   }
 
+  container.innerHTML = `
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px;">
+      ${filtered.map(t => {
+        const isRank1 = t.rank === 1;
+        const isGirl = t.badge && t.badge.includes('गार्गी');
+        const badgeColor = isRank1 ? 'var(--brand-gold)' : (isGirl ? '#EC4899' : '#38BDF8');
+        const badgeBg = isRank1 ? 'rgba(255,179,0,0.14)' : (isGirl ? 'rgba(236,72,153,0.12)' : 'rgba(56,189,248,0.12)');
+        const badgeBorder = isRank1 ? 'rgba(255,179,0,0.35)' : (isGirl ? 'rgba(236,72,153,0.35)' : 'rgba(56,189,248,0.35)');
+
+        return `
+          <div class="quick-card liquid-glass-card" style="align-items: flex-start; text-align: left; padding: 22px; position: relative; border-left: 4.5px solid ${badgeColor}; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+            
+            <!-- Top Badge Strip -->
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; margin-bottom: 12px;">
+              <span style="background: ${badgeBg}; color: ${badgeColor}; font-size: 0.72rem; font-weight: 800; padding: 4px 12px; border-radius: 9999px; border: 1px solid ${badgeBorder}; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa-solid ${isRank1 ? 'fa-crown' : (isGirl ? 'fa-award' : 'fa-star')}"></i>
+                ${t.badge}
+              </span>
+              <span style="font-size: 1.35rem; font-weight: 900; color: ${badgeColor};">#${t.rank}</span>
+            </div>
+
+            <!-- Student Info -->
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-primary); margin-bottom: 3px; font-family: var(--font-serif);">
+              ${t.name}
+            </h3>
+            <p style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 6px;">
+              S/D/o Sh. <strong>${t.father}</strong>
+            </p>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 14px; display: flex; gap: 10px;">
+              <span>Roll No: <strong style="color: var(--brand-sky);">${t.roll}</strong></span>
+              <span>•</span>
+              <span>${t.classTitle}</span>
+            </div>
+
+            <!-- Score Details -->
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; padding: 10px 14px; background: rgba(0,0,0,0.2); border-radius: 10px; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.05);">
+              <div>
+                <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Score / Total</div>
+                <div style="font-size: 0.95rem; font-weight: 800; color: var(--text-primary);">${t.marks} / ${t.maxMarks}</div>
+              </div>
+              <div style="text-align: right;">
+                <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Percentage</div>
+                <div style="font-size: 1.3rem; font-weight: 900; color: ${badgeColor};">${t.percent}</div>
+              </div>
+            </div>
+
+            <!-- Action Button -->
+            <button type="button" class="btn btn-secondary btn-sm" onclick="openStudentScorecard('${t.roll}')" style="width: 100%; justify-content: center; font-size: 0.82rem; padding: 8px 12px;">
+              <i class="fa-solid fa-file-invoice me-1"></i> View Official Marksheet
+            </button>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+};
+
+window.handleLiveResultSearch = function(query) {
+  renderToppersShowcase(query);
+};
+
+// Marksheet Modal Generator
+window.openStudentScorecard = function(rollNo) {
   const modal = document.getElementById('servicesModal');
-  const title = document.getElementById('servicesModalTitle');
-  const body = document.getElementById('servicesModalBody');
-  if (!modal || !title || !body) return;
+  const modalBody = document.getElementById('servicesModalBody');
+  const modalTitle = document.getElementById('servicesModalTitle');
+  if (!modal || !modalBody) return;
 
-  title.textContent = isClass10 ? 'RBSE 10th Secondary Official Marksheet 2026' : 'RBSE 12th Senior Secondary Official Marksheet 2026';
-  
-  body.innerHTML = `
-    <div style="background: var(--bg-surface); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
-      <div style="text-align: center; border-bottom: 2px solid var(--brand-gold); padding-bottom: 14px; margin-bottom: 16px;">
-        <div style="font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--brand-gold); font-weight: 800;">
-          Rajasthan Board of Secondary Education (RBSE Ajmer)
-        </div>
-        <h3 style="font-size: 1.25rem; font-weight: 900; margin: 4px 0; color: var(--text-primary);">
-          GOVT. SR. SEC. SCHOOL 52 LNP (MANJHUWAS)
-        </h3>
-        <div style="font-size: 0.8rem; color: var(--text-muted);">
-          School Code: 1240860 / 212024 • District: Sri Ganganagar • Exam Year: 2026
-        </div>
+  const data10 = window.SCHOOL_DATA.boardResults10th2026;
+  const data12 = window.SCHOOL_DATA.boardResults2026;
+
+  let student = null;
+  let isClass10 = false;
+
+  // Search 10th
+  if (data10) {
+    student = data10.students.find(s => s.roll.toString() === rollNo.toString());
+    if (student) isClass10 = true;
+  }
+
+  // Search 12th
+  if (!student && data12) {
+    student = data12.artsStudents.find(s => s.roll.toString() === rollNo.toString());
+    if (!student) {
+      student = data12.scienceStudents.find(s => s.roll.toString() === rollNo.toString());
+    }
+  }
+
+  if (!student) {
+    alert('Student marksheet not found for Roll No: ' + rollNo);
+    return;
+  }
+
+  if (modalTitle) {
+    modalTitle.textContent = isClass10 ? 'RBSE Secondary Examination Marksheet 2026' : 'RBSE Sr. Secondary Examination Marksheet 2026';
+  }
+
+  const subjectsHtml = isClass10 ? `
+    <tr><td>01. Hindi (अनिवार्य हिन्दी)</td><td>100</td><td>${student.hindi}</td><td>${student.hindi >= 75 ? '<span style="color:#10B981;font-weight:700;">D (Distinction)</span>' : 'Pass'}</td></tr>
+    <tr><td>02. English (अनिवार्य अंग्रेजी)</td><td>100</td><td>${student.english}</td><td>${student.english >= 75 ? '<span style="color:#10B981;font-weight:700;">D (Distinction)</span>' : 'Pass'}</td></tr>
+    <tr><td>03. Science (विज्ञान)</td><td>100</td><td>${student.science}</td><td>${student.science >= 75 ? '<span style="color:#10B981;font-weight:700;">D (Distinction)</span>' : 'Pass'}</td></tr>
+    <tr><td>04. Social Science (सामाजिक विज्ञान)</td><td>100</td><td>${student.socSci}</td><td>${student.socSci >= 75 ? '<span style="color:#10B981;font-weight:700;">D (Distinction)</span>' : 'Pass'}</td></tr>
+    <tr><td>05. Mathematics (गणित)</td><td>100</td><td>${student.maths}</td><td>${student.maths >= 75 ? '<span style="color:#10B981;font-weight:700;">D (Distinction)</span>' : 'Pass'}</td></tr>
+    <tr><td>06. Third Language (तृतीय भाषा)</td><td>100</td><td>${student.thirdLang}</td><td>${student.thirdLang >= 75 ? '<span style="color:#10B981;font-weight:700;">D (Distinction)</span>' : 'Pass'}</td></tr>
+  ` : (student.stream === 'Science' ? `
+    <tr><td>01. Hindi (Compulsory)</td><td>100</td><td>${student.hindi}</td><td>Pass</td></tr>
+    <tr><td>02. English (Compulsory)</td><td>100</td><td>${student.english}</td><td>Pass</td></tr>
+    <tr><td>03. Physics (भौतिक विज्ञान)</td><td>100</td><td>${student.physics}</td><td>${student.physics >= 75 ? '<span style="color:#10B981;font-weight:700;">D (Distinction)</span>' : 'Pass'}</td></tr>
+    <tr><td>04. Chemistry (रसायन विज्ञान)</td><td>100</td><td>${student.chemistry}</td><td>${student.chemistry >= 75 ? '<span style="color:#10B981;font-weight:700;">D (Distinction)</span>' : 'Pass'}</td></tr>
+    <tr><td>05. Biology / Maths (जीव/गणित)</td><td>100</td><td>${student.bioMaths}</td><td>${student.bioMaths >= 75 ? '<span style="color:#10B981;font-weight:700;">D (Distinction)</span>' : 'Pass'}</td></tr>
+  ` : `
+    <tr><td>01. Hindi (Compulsory)</td><td>100</td><td>${student.hindi}</td><td>Pass</td></tr>
+    <tr><td>02. English (Compulsory)</td><td>100</td><td>${student.english}</td><td>Pass</td></tr>
+    <tr><td>03. Political Science (राजनीति विज्ञान)</td><td>100</td><td>${student.polSci}</td><td>${student.polSci >= 75 ? '<span style="color:#10B981;font-weight:700;">D (Distinction)</span>' : 'Pass'}</td></tr>
+    <tr><td>04. Geography (भूगोल)</td><td>100</td><td>${student.geography}</td><td>${student.geography >= 75 ? '<span style="color:#10B981;font-weight:700;">D (Distinction)</span>' : 'Pass'}</td></tr>
+    <tr><td>05. Sociology (समाजशास्त्र)</td><td>100</td><td>${student.sociology}</td><td>${student.sociology >= 75 ? '<span style="color:#10B981;font-weight:700;">D (Distinction)</span>' : 'Pass'}</td></tr>
+  `);
+
+  modalBody.innerHTML = `
+    <div style="background: rgba(255,255,255,0.03); padding: 18px; border-radius: 14px; border: 1px solid rgba(227,202,165,0.3); margin-bottom: 16px;">
+      <div style="text-align: center; margin-bottom: 14px; border-bottom: 1px dashed rgba(255,255,255,0.15); padding-bottom: 12px;">
+        <h4 style="color: var(--brand-gold); font-size: 1.1rem; font-weight: 800; margin-bottom: 2px;">BOARD OF SECONDARY EDUCATION, RAJASTHAN</h4>
+        <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0;">Govt. Sr. Sec. School 52 LNP (मांझूवास) • School Code: <strong>212024</strong></p>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.88rem; margin-bottom: 18px; padding: 12px; background: rgba(255,255,255,0.04); border-radius: 8px;">
-        <div><strong>Student Name:</strong> <span style="color: var(--brand-gold); font-weight: 700;">${student.name}</span></div>
-        <div><strong>Roll Number:</strong> <span style="color: var(--brand-sky); font-weight: 700;">${student.roll}</span></div>
-        <div><strong>Father's Name:</strong> Sh. ${student.father}</div>
-        <div><strong>Examination:</strong> ${isClass10 ? 'Class 10th Secondary' : (isArts ? 'Class 12th (Arts)' : 'Class 12th (Science)')}</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.85rem; margin-bottom: 16px;">
+        <div><strong>Student Name:</strong> <span style="color: var(--text-primary);">${student.name}</span></div>
+        <div><strong>Roll Number:</strong> <span style="color: var(--brand-gold); font-weight: 800;">${student.roll}</span></div>
+        <div><strong>Father's Name:</strong> <span style="color: var(--text-primary);">${student.father}</span></div>
+        <div><strong>Class:</strong> <span style="color: var(--text-primary);">${isClass10 ? '10th Secondary' : `12th (${student.stream})`}</span></div>
       </div>
 
-      <table style="width: 100%; font-size: 0.88rem; border-collapse: collapse; margin-bottom: 18px;">
+      <table class="notices-table" style="width: 100%; font-size: 0.82rem; margin-bottom: 14px;">
         <thead>
-          <tr style="background: rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.15);">
-            <th style="padding: 8px 12px; text-align: left;">Subject</th>
-            <th style="padding: 8px 12px; text-align: center;">Max Marks</th>
-            <th style="padding: 8px 12px; text-align: right;">Marks Obtained</th>
+          <tr>
+            <th>Subject Name</th>
+            <th>Max</th>
+            <th>Marks Obtained</th>
+            <th>Remarks</th>
           </tr>
         </thead>
         <tbody>
-          ${isClass10 ? `
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">Hindi</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700;">${student.hindi}</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">English</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700; color: var(--brand-gold);">${student.english}</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">Science</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700;">${student.science}</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">Social Science</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700;">${student.socSci}</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">Mathematics</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700; color: var(--brand-gold);">${student.maths}</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">Third Language (${student.thirdLang.split(':')[0]})</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700; color: var(--brand-gold);">${student.thirdLang.split(':')[1] || student.thirdLang}</td>
-            </tr>
-          ` : (isArts ? `
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">Hindi (Compulsory)</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700;">${student.hindi}</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">English (Compulsory)</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700;">${student.english}</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">Political Science</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700; color: var(--brand-gold);">${student.polSci}</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">Geography</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700; color: var(--brand-gold);">${student.geography}</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">Sociology</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700;">${student.sociology}</td>
-            </tr>
-          ` : `
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">Hindi (Compulsory)</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700;">${student.hindi}</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">English (Compulsory)</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700;">${student.english}</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">Physics</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700;">${student.physics}</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">Chemistry</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700; color: var(--brand-gold);">${student.chemistry}</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 8px 12px;">Biology</td>
-              <td style="padding: 8px 12px; text-align: center;">100</td>
-              <td style="padding: 8px 12px; text-align: right; font-weight: 700; color: var(--brand-gold);">${student.biology}</td>
-            </tr>
-          `)}
+          ${subjectsHtml}
         </tbody>
-        <tfoot>
-          <tr style="background: rgba(255,179,0,0.12); font-weight: 800; border-top: 2px solid var(--brand-gold);">
-            <td style="padding: 10px 12px;">Grand Total / Aggregate</td>
-            <td style="padding: 10px 12px; text-align: center;">${isClass10 ? '600' : '500'}</td>
-            <td style="padding: 10px 12px; text-align: right; color: var(--brand-gold); font-size: 1.05rem;">${student.total} (${student.percent}%)</td>
-          </tr>
-        </tfoot>
       </table>
 
-      <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center; padding: 12px; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; margin-bottom: 16px;">
-        <span style="color: #10B981; font-weight: 800;"><i class="fa-solid fa-award me-1"></i> FINAL RESULT: ${student.result.toUpperCase()}</span>
-        ${student.gender === 'F' && student.percent >= 75 
-          ? '<span style="background: #E11D48; color: #fff; padding: 3px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 800;"><i class="fa-solid fa-award me-1"></i> GARGI PURASKAR ELIGIBLE (गार्गी पुरस्कार - केवल छात्रा)</span>' 
-          : (student.percent >= 75 ? '<span style="background: #10B981; color: #fff; padding: 3px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 800;"><i class="fa-solid fa-trophy me-1"></i> MERIT DISTINCTION (मेधावी छात्र सम्मान)</span>' : '')}
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: rgba(16,185,129,0.12); border-radius: 10px; border: 1px solid rgba(16,185,129,0.3);">
+        <div>
+          <div style="font-size: 0.74rem; text-transform: uppercase; color: #10B981; font-weight: 700;">Result Status</div>
+          <div style="font-size: 1.1rem; font-weight: 900; color: #10B981;"><i class="fa-solid fa-circle-check me-1"></i> PASSED (FIRST DIVISION)</div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 0.74rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Percentage</div>
+          <div style="font-size: 1.35rem; font-weight: 900; color: var(--brand-gold);">${student.percent}%</div>
+        </div>
       </div>
+    </div>
 
-      <div style="display: flex; gap: 10px;">
-        <button class="btn btn-primary btn-sm w-100" style="flex: 1;" onclick="window.print()">
-          <i class="fa-solid fa-print me-1"></i> Print Marksheet
-        </button>
-        <button class="btn btn-secondary btn-sm" onclick="document.getElementById('servicesModal').classList.remove('open'); document.body.style.overflow='';">
-          Close
-        </button>
-      </div>
+    <div style="display: flex; gap: 10px; justify-content: flex-end;">
+      <button class="btn btn-secondary btn-sm" onclick="window.print()"><i class="fa-solid fa-print me-1"></i> Print Marksheet</button>
+      <button class="btn btn-primary btn-sm" onclick="document.getElementById('servicesModal').classList.remove('open'); document.body.style.overflow='';"><i class="fa-solid fa-check me-1"></i> Close</button>
     </div>
   `;
 
@@ -423,77 +244,6 @@ window.openStudentScorecard = function(rollNo) {
   document.body.style.overflow = 'hidden';
 };
 
-// Search across all 85 students (Class 10th & 12th)
-window.handleLiveResultSearch = function(query) {
-  if (!query || !query.trim()) {
-    renderBoardResultTable();
-    return;
-  }
-  const q = query.trim().toLowerCase();
-  const data10 = window.SCHOOL_DATA?.boardResults10th2026;
-  const data12 = window.SCHOOL_DATA?.boardResults2026;
-
-  const all = [
-    ...(data10?.students?.map(s => ({ ...s, cls: 'Class 10th' })) || []),
-    ...(data12?.artsStudents?.map(s => ({ ...s, cls: 'Class 12th (Arts)' })) || []),
-    ...(data12?.scienceStudents?.map(s => ({ ...s, cls: 'Class 12th (Science)' })) || [])
-  ];
-
-  const matched = all.filter(s => s.roll.toLowerCase().includes(q) || s.name.toLowerCase().includes(q) || s.father.toLowerCase().includes(q));
-
-  const container = document.getElementById('boardResultTableContainer');
-  if (!container) return;
-
-  if (matched.length === 0) {
-    container.innerHTML = `
-      <div class="text-center py-5 text-muted">
-        <i class="fa-solid fa-user-xmark" style="font-size: 2.2rem; margin-bottom: 10px; opacity: 0.7;"></i>
-        <h4 style="color: var(--text-primary); margin-bottom: 4px;">No Student Found for "${query}"</h4>
-        <p style="font-size: 0.85rem;">Please check your RBSE Roll Number (e.g. 1851711 for 10th or 3359329 for 12th).</p>
-      </div>
-    `;
-    return;
-  }
-
-  container.innerHTML = `
-    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-      <table class="notices-table" style="width: 100%; min-width: 720px;">
-        <thead>
-          <tr>
-            <th>Class</th>
-            <th>Roll No</th>
-            <th>Student Name</th>
-            <th>Father's Name</th>
-            <th>Total Marks</th>
-            <th>Percentage</th>
-            <th>Division</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${matched.map(s => `
-            <tr>
-              <td><span class="badge-udise" style="font-size: 0.72rem;">${s.cls}</span></td>
-              <td><strong style="color: var(--brand-sky);">${s.roll}</strong></td>
-              <td><strong>${s.name}</strong></td>
-              <td style="color: var(--text-secondary); font-size: 0.85rem;">${s.father}</td>
-              <td><strong>${s.total} / ${s.cls === 'Class 10th' ? '600' : '500'}</strong></td>
-              <td><span style="background: rgba(16,185,129,0.15); color: #10B981; padding: 2px 6px; border-radius: 4px; font-weight: 700;">${s.percent}%</span></td>
-              <td><span style="color: #10B981; font-weight: 700; font-size: 0.8rem;"><i class="fa-solid fa-circle-check"></i> ${s.result}</span></td>
-              <td>
-                <button class="btn btn-sm btn-primary" onclick="openStudentScorecard('${s.roll}')">
-                  <i class="fa-solid fa-eye me-1"></i> View Marksheet
-                </button>
-              </td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-};
-
 document.addEventListener('DOMContentLoaded', () => {
-  renderSubTabButtons();
-  renderBoardResultTable();
+  renderToppersShowcase();
 });
