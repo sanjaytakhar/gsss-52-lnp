@@ -6,37 +6,43 @@
 
 /* ─── DESIGN TOKENS ─────────────────────────────────────────────────────── */
 :root {
-  --brand-navy:        #0D47A1;
-  --brand-navy-deep:   #071326;
-  --brand-navy-mid:    #1565C0;
-  --brand-sky:         #1976D2;
-  --brand-gold:        #FFB300;
-  --brand-gold-light:  #FFD54F;
+  /* Color Hunt Palette: https://colorhunt.co/palette/ad8b73ceab93e3caa5fffbe9 */
+  --ch-earth:          #AD8B73; /* Primary Warm Terracotta Earth */
+  --ch-sand:           #CEAB93; /* Soft Almond Dune / Secondary */
+  --ch-wheat:          #E3CAA5; /* Warm Wheat Gold / Accent */
+  --ch-cream:          #FFFBE9; /* Alabaster Cream / Light Surface */
+
+  --brand-navy:        #AD8B73;
+  --brand-navy-deep:   #150F0A;
+  --brand-navy-mid:    #3A271B;
+  --brand-sky:         #CEAB93;
+  --brand-gold:        #E3CAA5;
+  --brand-gold-light:  #FFFBE9;
   --brand-emerald:     #10B981;
 
-  /* Apple Liquid Glass Surfaces */
-  --glass-tint:        rgba(18,30,58,0.42);
-  --glass-tint-hover:  rgba(22,38,72,0.55);
-  --glass-rim-top:     rgba(255,255,255,0.55);
-  --glass-rim-bottom:  rgba(255,255,255,0.08);
-  --glass-rim-left:    rgba(255,255,255,0.32);
+  /* Apple Liquid Glass Warm Amber Tint */
+  --glass-tint:        rgba(38, 26, 18, 0.52);
+  --glass-tint-hover:  rgba(56, 39, 28, 0.68);
+  --glass-rim-top:     rgba(255, 251, 233, 0.58);
+  --glass-rim-bottom:  rgba(227, 202, 165, 0.12);
+  --glass-rim-left:    rgba(255, 251, 233, 0.35);
   --glass-blur:        saturate(180%) blur(28px);
   --glass-blur-light:  saturate(150%) blur(16px);
 
   /* Elevation */
-  --shadow-xs: 0 2px 8px rgba(0,0,0,0.25);
-  --shadow-sm: 0 4px 16px rgba(0,0,0,0.32),0 1px 3px rgba(0,0,0,0.18);
-  --shadow-md: 0 8px 32px rgba(0,0,0,0.38),0 2px 8px rgba(0,0,0,0.22);
-  --shadow-lg: 0 16px 48px rgba(0,0,0,0.45),0 4px 16px rgba(0,0,0,0.28);
-  --shadow-xl: 0 24px 64px rgba(0,0,0,0.55),0 8px 24px rgba(0,0,0,0.32);
-  --shadow-glow-gold: 0 0 20px rgba(255,179,0,0.28),0 0 60px rgba(255,179,0,0.10);
-  --shadow-glow-blue: 0 0 20px rgba(25,118,210,0.28),0 0 60px rgba(25,118,210,0.10);
+  --shadow-xs: 0 2px 8px rgba(0,0,0,0.30);
+  --shadow-sm: 0 4px 16px rgba(0,0,0,0.38),0 1px 3px rgba(0,0,0,0.22);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.45),0 2px 8px rgba(0,0,0,0.25);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.55),0 4px 16px rgba(0,0,0,0.32);
+  --shadow-xl: 0 24px 64px rgba(0,0,0,0.65),0 8px 24px rgba(0,0,0,0.38);
+  --shadow-glow-gold: 0 0 24px rgba(227,202,165,0.35),0 0 60px rgba(173,139,115,0.18);
+  --shadow-glow-blue: 0 0 24px rgba(206,171,147,0.32),0 0 60px rgba(173,139,115,0.15);
 
-  --bg-base:    #07111F;
-  --bg-surface: #0C1929;
-  --text-primary:   #F8FAFC;
-  --text-secondary: #B8CCDF;
-  --text-muted:     #6E8AA8;
+  --bg-base:    #120C08;
+  --bg-surface: #1E150F;
+  --text-primary:   #FFFBE9;
+  --text-secondary: #E3CAA5;
+  --text-muted:     #CEAB93;
 
   --font-serif: 'Playfair Display','Cinzel','Noto Serif Devanagari',Georgia,serif;
   --font-sans:  'Plus Jakarta Sans','Inter','Noto Sans Devanagari',system-ui,sans-serif;
@@ -2038,4 +2044,96 @@ body {
     background-color: hsl(223, 10%, 100%);
     transform: translate3d(0, 0, 1px) rotateY(0);
   }
+}
+
+/* ─── LIGHT MODE (Color Hunt: Cream, Earth, Sand, Wheat) ─────────────────── */
+[data-theme="light"] {
+  --bg-base: #FFFBE9 !important;
+  --bg-surface: #FBF4DE !important;
+  --text-primary: #2C1B10 !important;
+  --text-secondary: #634633 !important;
+  --text-muted: #8E6E56 !important;
+
+  --brand-navy: #AD8B73 !important;
+  --brand-navy-deep: #FFFBE9 !important;
+  --brand-navy-mid: #E3CAA5 !important;
+  --brand-sky: #8C6850 !important;
+  --brand-gold: #AD8B73 !important;
+  --brand-gold-light: #E3CAA5 !important;
+
+  --glass-tint: rgba(255, 251, 233, 0.82) !important;
+  --glass-tint-hover: rgba(255, 251, 233, 0.95) !important;
+  --glass-rim-top: rgba(173, 139, 115, 0.40) !important;
+  --glass-rim-left: rgba(173, 139, 115, 0.25) !important;
+  --glass-rim-bottom: rgba(173, 139, 115, 0.12) !important;
+}
+
+[data-theme="light"] body {
+  background-color: #FFFBE9 !important;
+  color: #2C1B10 !important;
+}
+
+[data-theme="light"] .liquid-glass-card,
+[data-theme="light"] .quick-card,
+[data-theme="light"] .event-card,
+[data-theme="light"] .news-card,
+[data-theme="light"] .faculty-card,
+[data-theme="light"] .stream-card,
+[data-theme="light"] .facility-card,
+[data-theme="light"] .contact-info-card,
+[data-theme="light"] .contact-form,
+[data-theme="light"] .notices-table-container {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid rgba(173, 139, 115, 0.25) !important;
+  box-shadow: 0 8px 24px rgba(173, 139, 115, 0.12) !important;
+}
+
+[data-theme="light"] .top-utility-bar {
+  background: rgba(255, 251, 233, 0.92) !important;
+  border-bottom: 1px solid rgba(173, 139, 115, 0.2) !important;
+}
+
+[data-theme="light"] .main-navbar {
+  background: rgba(255, 251, 233, 0.88) !important;
+  border-bottom: 1px solid rgba(173, 139, 115, 0.2) !important;
+}
+
+[data-theme="light"] .nav-link,
+[data-theme="light"] .top-bar-link {
+  color: #4A3323 !important;
+}
+
+[data-theme="light"] .nav-link:hover,
+[data-theme="light"] .top-bar-link:hover {
+  color: #AD8B73 !important;
+}
+
+[data-theme="light"] .btn-primary {
+  background: linear-gradient(135deg, #AD8B73 0%, #8C6850 100%) !important;
+  color: #FFFBE9 !important;
+  box-shadow: 0 4px 16px rgba(173, 139, 115, 0.35) !important;
+}
+
+[data-theme="light"] .btn-secondary {
+  background: rgba(173, 139, 115, 0.12) !important;
+  border-color: rgba(173, 139, 115, 0.3) !important;
+  color: #4A3323 !important;
+}
+
+[data-theme="light"] .section-title,
+[data-theme="light"] .hero-title,
+[data-theme="light"] .stream-title,
+[data-theme="light"] .faculty-name {
+  color: #2C1B10 !important;
+}
+
+[data-theme="light"] .section-tag {
+  background: rgba(173, 139, 115, 0.15) !important;
+  color: #8C6850 !important;
+  border-color: rgba(173, 139, 115, 0.3) !important;
+}
+
+[data-theme="light"] .main-footer {
+  background: #2C1B10 !important;
+  color: #FFFBE9 !important;
 }
