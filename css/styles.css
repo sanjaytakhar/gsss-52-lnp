@@ -2137,3 +2137,80 @@ body {
   background: #2C1B10 !important;
   color: #FFFBE9 !important;
 }
+
+/* ==========================================================================
+   ISOMETRIC 3D SCHOOL CAMPUS MODEL SHOWCASE (HERO SECTION)
+   ========================================================================== */
+.hero-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s8);
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .hero-layout-grid {
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: var(--s10);
+  }
+}
+
+.hero-model-card {
+  position: relative;
+  border-radius: var(--r-2xl);
+  overflow: hidden;
+  padding: 12px;
+  background: var(--glass-tint);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-top: 1px solid var(--glass-rim-top);
+  border-left: 1px solid var(--glass-rim-left);
+  border-right: 1px solid var(--glass-rim-bottom);
+  border-bottom: 1px solid var(--glass-rim-bottom);
+  box-shadow: var(--shadow-xl), var(--shadow-glow-gold);
+  transition: transform var(--dur-normal) var(--ease-spring), box-shadow var(--dur-normal) var(--ease-spring);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.hero-model-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.65), 0 0 45px rgba(227,202,165,0.4);
+}
+
+.hero-model-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--r-xl);
+  display: block;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  transition: transform var(--dur-slow) var(--ease-glass);
+}
+
+.hero-model-card:hover .hero-model-img {
+  transform: scale(1.02);
+}
+
+.hero-model-badge {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  right: 22px;
+  padding: 10px 16px;
+  border-radius: var(--r-md);
+  background: rgba(18, 12, 8, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(227, 202, 165, 0.4);
+  color: #FFFBE9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+}

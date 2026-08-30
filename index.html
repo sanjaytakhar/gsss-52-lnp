@@ -233,104 +233,64 @@
     </div>
 
     <div class="container">
-          <!-- 3D Floating Academic, Computer Science & Science Elements Scene -->
-    <div class="hero-3d-scene" id="hero3dScene">
-      <!-- 1. 3D Page-Flipping Academic Book (Left-Top) -->
-      <div class="floating-3d-item float-anim-1" style="top: 13%; right: 48%;">
-        <div class="book" title="Academic Excellence - GSSS 52 LNP">
-          <div class="book__pg-shadow"></div>
-          <div class="book__pg"></div>
-          <div class="book__pg book__pg--2"></div>
-          <div class="book__pg book__pg--3"></div>
-          <div class="book__pg book__pg--4"></div>
-          <div class="book__pg book__pg--5"></div>
-        </div>
-      </div>
-
-      <!-- 2. 3D Fountain Pen / Stylus (Floating near book) -->
-      <div class="floating-3d-item float-anim-2" style="top: 48%; right: 58%;">
-        <div class="pen-3d">
-          <div class="pen-body">
-            <div class="pen-clip"></div>
+      <div class="hero-layout-grid">
+        <!-- Left Column: Content & Actions -->
+        <div class="hero-content">
+          <div class="hero-badge liquid-glass">
+            <img src="assets/rajasthan-map.png" alt="Rajasthan State" style="width: 18px; height: 18px; object-fit: contain; vertical-align: middle;">
+            <span data-i18n-en="RBSE Model Senior Secondary School • Sri Ganganagar" data-i18n-hi="आरबीएसई मान्यता प्राप्त उत्कृष्ट आदर्श विद्यालय • श्रीगंगानगर">RBSE Model Senior Secondary School • Sri Ganganagar</span>
           </div>
-          <div class="pen-grip"></div>
-          <div class="pen-nib"></div>
-        </div>
-      </div>
 
-      <!-- 3. 3D Computer Science Laptop with Glowing Code (Center-Right) -->
-      <div class="floating-3d-item float-anim-3" style="top: 25%; right: 12%;">
-        <div class="laptop-3d">
-          <div class="laptop-screen">
-            <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-              <span style="width: 6px; height: 6px; border-radius: 50%; background: #EF4444;"></span>
-              <span style="width: 6px; height: 6px; border-radius: 50%; background: #F59E0B;"></span>
-              <span style="width: 6px; height: 6px; border-radius: 50%; background: #10B981;"></span>
-            </div>
-            <div class="code-glow-text">
-              &gt; GSSS_52_LNP.init()<br>
-              &gt; AI &amp; STEM Labs: ONLINE<br>
-              &gt; Smart Class: ENABLED<br>
-              &gt; Status: 100% Results
-            </div>
-            <div style="font-size: 0.55rem; color: #38BDF8; display: flex; justify-content: space-between;">
-              <span>PYTHON • C++</span>
-              <span><i class="fa-solid fa-microchip"></i> ICT</span>
+          <h2 class="hero-title" data-i18n-en="A Community That Shapes Future Leaders" data-i18n-hi="भविष्य के निर्माताओं और राष्ट्र नायकों का निर्माण">
+            A Community That Shapes Future Leaders
+          </h2>
+
+          <p class="hero-description" data-i18n-en="Empowering rural youth with modern science, agricultural research, ICT smart digital literacy, and time-tested academic excellence in 52 LNP (मांझूवास), Rajasthan." data-i18n-hi="ग्रामीण प्रतिभाओं को आधुनिक विज्ञान, कृषि अनुसंधान, आईसीटी डिजिटल तकनीक और उत्कृष्ट संस्कारों से सशक्त बनाने वाला अग्रणी राजकीय विद्यालय।">
+            Empowering rural youth with modern science, agricultural research, ICT smart digital literacy, and time-tested academic excellence in 52 LNP (मांझूवास), Rajasthan.
+          </p>
+
+          <div class="hero-cta-group">
+            <button class="btn btn-primary btn-lg open-admission-modal">
+              <i class="fa-solid fa-pencil"></i>
+              <span data-i18n-en="Apply Now (Session 2026-27)" data-i18n-hi="प्रवेश आवेदन 2026-27">Apply Now (Session 2026-27)</span>
+            </button>
+            <a href="#gallery" class="btn btn-secondary btn-lg">
+              <i class="fa-solid fa-vr-cardboard"></i>
+              <span data-i18n-en="Take a Virtual Tour" data-i18n-hi="परिसर भ्रमण">Take a Virtual Tour</span>
+            </a>
+            <a href="#notices" class="btn btn-secondary btn-lg">
+              <i class="fa-solid fa-file-pdf"></i>
+              <span data-i18n-en="Prospectus & Notices" data-i18n-hi="प्रॉस्पेक्टस व सूचनाएं">Prospectus & Notices</span>
+            </a>
+          </div>
+
+          <!-- Hero Stats Strip -->
+          <div class="stats-strip liquid-glass" id="statsContainer">
+            <!-- Dynamically populated via data.js -->
+          </div>
+        </div>
+
+        <!-- Right Column: 3D School Campus Architectural Model Showcase -->
+        <div class="hero-model-container">
+          <div class="hero-model-card">
+            <img 
+              src="assets/images/campus/school-3d-model.jpg" 
+              alt="GSSS 52 LNP Campus Architectural 3D Model" 
+              class="hero-model-img"
+            >
+            <div class="hero-model-badge">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-cube" style="color: var(--brand-gold); font-size: 1.15rem;"></i>
+                <div>
+                  <div style="font-weight: 800; font-size: 0.85rem; color: #FFFBE9;" data-i18n-en="School Campus Model" data-i18n-hi="विद्यालय परिसर मॉडल">School Campus Model</div>
+                  <div style="font-size: 0.72rem; color: var(--brand-sky);" data-i18n-en="GSSS 52 LNP (मांझूवास)" data-i18n-hi="रा.उ.मा.वि. 52 एलएनपी">GSSS 52 LNP (मांझूवास)</div>
+                </div>
+              </div>
+              <span style="font-size: 0.72rem; padding: 4px 10px; border-radius: 9999px; background: rgba(227,202,165,0.22); border: 1px solid rgba(227,202,165,0.45); color: var(--brand-gold); font-weight: 700;">
+                <i class="fa-solid fa-building-columns me-1"></i> Campus 3D
+              </span>
             </div>
           </div>
-          <div class="laptop-base"></div>
-        </div>
-      </div>
-
-      <!-- 4. 3D Computer Science Microchip / AI Neural Node (Bottom-Right) -->
-      <div class="floating-3d-item float-anim-4" style="top: 62%; right: 28%;">
-        <div class="chip-3d">
-          <div class="chip-pins"></div>
-          <i class="fa-solid fa-microchip chip-core"></i>
-          <span style="font-size: 0.62rem; font-weight: 800; letter-spacing: 0.5px; margin-top: 4px; text-transform: uppercase;">ICT Smart AI</span>
-        </div>
-      </div>
-
-      <!-- 5. 3D Science Lab Atom & Flask (Top-Right) -->
-      <div class="floating-3d-item float-anim-5" style="top: 10%; right: 20%;">
-        <div style="width: 70px; height: 70px; border-radius: 50%; background: rgba(13, 71, 161, 0.6); border: 2px solid #FFD54F; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(255, 213, 79, 0.5);">
-          <i class="fa-solid fa-atom" style="font-size: 2.2rem; color: #FFD54F; animation: spin-slow 10s linear infinite;"></i>
-        </div>
-      </div>
-    </div>
-
-      <div class="hero-content">
-        <div class="hero-badge liquid-glass">
-          <img src="assets/rajasthan-map.png" alt="Rajasthan State" style="width: 18px; height: 18px; object-fit: contain; vertical-align: middle;">
-          <span data-i18n-en="RBSE Model Senior Secondary School • Sri Ganganagar" data-i18n-hi="आरबीएसई मान्यता प्राप्त उत्कृष्ट आदर्श विद्यालय • श्रीगंगानगर">RBSE Model Senior Secondary School • Sri Ganganagar</span>
-        </div>
-
-        <h2 class="hero-title" data-i18n-en="A Community That Shapes Future Leaders" data-i18n-hi="भविष्य के निर्माताओं और राष्ट्र नायकों का निर्माण">
-          A Community That Shapes Future Leaders
-        </h2>
-
-        <p class="hero-description" data-i18n-en="Empowering rural youth with modern science, agricultural research, ICT smart digital literacy, and time-tested academic excellence in 52 LNP (मांझूवास), Rajasthan." data-i18n-hi="ग्रामीण प्रतिभाओं को आधुनिक विज्ञान, कृषि अनुसंधान, आईसीटी डिजिटल तकनीक और उत्कृष्ट संस्कारों से सशक्त बनाने वाला अग्रणी राजकीय विद्यालय।">
-          Empowering rural youth with modern science, agricultural research, ICT smart digital literacy, and time-tested academic excellence in 52 LNP (मांझूवास), Rajasthan.
-        </p>
-
-        <div class="hero-cta-group">
-          <button class="btn btn-primary btn-lg open-admission-modal">
-            <i class="fa-solid fa-pencil"></i>
-            <span data-i18n-en="Apply Now (Session 2026-27)" data-i18n-hi="प्रवेश आवेदन 2026-27">Apply Now (Session 2026-27)</span>
-          </button>
-          <a href="#gallery" class="btn btn-secondary btn-lg">
-            <i class="fa-solid fa-vr-cardboard"></i>
-            <span data-i18n-en="Take a Virtual Tour" data-i18n-hi="परिसर भ्रमण">Take a Virtual Tour</span>
-          </a>
-          <a href="#notices" class="btn btn-secondary btn-lg">
-            <i class="fa-solid fa-file-pdf"></i>
-            <span data-i18n-en="Prospectus & Notices" data-i18n-hi="प्रॉस्पेक्टस व सूचनाएं">Prospectus & Notices</span>
-          </a>
-        </div>
-
-        <!-- Hero Stats Strip -->
-        <div class="stats-strip liquid-glass" id="statsContainer">
-          <!-- Dynamically populated via data.js -->
         </div>
       </div>
     </div>
