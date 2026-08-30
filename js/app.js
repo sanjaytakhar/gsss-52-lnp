@@ -872,28 +872,30 @@ window.openPortalModal = function(type) {
 };
 
 window.handleResultSearch = function() {
-  const roll = document.getElementById('resRollInput')?.value || '2605201';
-  const cls = document.getElementById('resClassSelect')?.value || 'Class 12th';
+  const roll = (document.getElementById('resRollInput')?.value || '').trim();
   const output = document.getElementById('resultOutputArea');
   if (!output) return;
 
-  output.innerHTML = `
-    <div style="background: #E8F5E9; border: 1.5px solid #2E7D32; border-radius: 8px; padding: 16px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #A5D6A7; padding-bottom: 8px; margin-bottom: 8px;">
-        <strong style="color: #1B5E20;"><i class="fa-solid fa-award me-1"></i> RBSE BOARD RESULT: PASSED (1ST DIV)</strong>
-        <span style="background: #2E7D32; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">DISTINCTION</span>
+  const data = window.SCHOOL_DATA?.boardResults2026;
+  if (!data) return;
+
+  const student = data.artsStudents.find(s => s.roll === roll || s.name.toLowerCase() === roll.toLowerCase()) 
+               || data.scienceStudents.find(s => s.roll === roll || s.name.toLowerCase() === roll.toLowerCase());
+
+  if (!student) {
+    output.innerHTML = `
+      <div style="background: rgba(239, 68, 68, 0.1); border: 1.5px solid #EF4444; border-radius: 8px; padding: 14px; text-align: center; color: #EF4444;">
+        <i class="fa-solid fa-circle-exclamation" style="font-size: 1.5rem; margin-bottom: 6px;"></i>
+        <div><strong>No Result Found for Roll No / Name: "${roll}"</strong></div>
+        <small style="color: var(--text-secondary);">Please verify your 7-digit RBSE Roll Number (e.g. 3359329 or 2737271).</small>
       </div>
-      <div style="font-size: 0.88rem; line-height: 1.8; color: #1E293B;">
-        <div><strong>Roll No:</strong> ${roll} • <strong>Exam:</strong> ${cls}</div>
-        <div><strong>School:</strong> Govt. Sr. Sec. School 52 LNP (08010205201)</div>
-        <div><strong>Marks Obtained:</strong> 468 / 500 (<strong>93.60%</strong>)</div>
-        <div><strong>Result Status:</strong> PASSED WITH HONOURS (गार्गी पुरस्कार हेतु पात्र)</div>
-      </div>
-      <button class="btn btn-sm btn-navy" style="width: 100%; margin-top: 12px;" onclick="downloadNoticeMock('${roll}', 'Official RBSE Marksheet')">
-        <i class="fa-solid fa-file-arrow-down me-1"></i> Download Provisional Marksheet PDF
-      </button>
-    </div>
-  `;
+    `;
+    return;
+  }
+
+  if (typeof window.openStudentScorecard === 'function') {
+    window.openStudentScorecard(student.roll);
+  }
 };
 
 window.handleTCSubmit = function() {

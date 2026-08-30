@@ -613,62 +613,103 @@
   <!-- =========================================================================
        NEW SECTION: RESULTS, TC & STUDENT PORTAL QUICK LINKS
        ========================================================================= -->
-  <section class="notice-section" id="results" style="background: var(--color-neutral-bg);">
+    <!-- =========================================================================
+       ACADEMIC RESULTS & BOARD PERFORMANCE SHOWCASE 2026
+       ========================================================================= -->
+  <section class="notice-section" id="results">
     <div class="container">
       <div class="text-center">
-        <div class="section-tag accent" data-i18n-en="Student Services & Portal" data-i18n-hi="छात्र सेवाएं व पोर्टल">Student Services & Portal</div>
-        <h2 class="section-title" data-i18n-en="Online Results, TC & Certificate Verification" data-i18n-hi="ऑनलाइन परीक्षा परिणाम एवं टीसी सत्यापन">Online Results, TC & Certificate Verification</h2>
-        <p class="section-subtitle" data-i18n-en="Direct digital access for students to check RBSE board marks, request transfer certificates, and verify school credentials." data-i18n-hi="आरबीएसई बोर्ड परिणाम जांचने, टीसी आवेदन एवं विद्यालय प्रमाणपत्रों के ऑनलाइन सत्यापन की त्वरित सुविधा।">
-          Direct digital access for students to check RBSE board marks, request transfer certificates, and verify school credentials.
+        <div class="section-tag accent" data-i18n-en="RBSE Board Results 2026" data-i18n-hi="आरबीएसई बोर्ड परीक्षा परिणाम 2026">RBSE Board Results 2026</div>
+        <h2 class="section-title" data-i18n-en="Class 12th Board Examination Results (100% Pass)" data-i18n-hi="कक्षा 12वीं बोर्ड परीक्षा परिणाम (100% उत्तीर्ण)">Class 12th Board Examination Results</h2>
+        <p class="section-subtitle" data-i18n-en="Outstanding 100% Pass Result across Science & Arts streams with 30 First Divisions (93.75%)." data-i18n-hi="कला एवं विज्ञान संकाय में 100% उत्कृष्ट परीक्षा परिणाम एवं 30 विद्यार्थियों द्वारा प्रथम श्रेणी प्राप्त।">
+          Outstanding 100% Pass Result across Science & Arts streams with 30 First Divisions (93.75%).
         </p>
       </div>
 
-      <div class="quick-cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-        <!-- Link Card 1: RBSE Board Results -->
-        <div class="quick-card" onclick="openPortalModal('results')" style="text-align: left; align-items: flex-start;">
-          <div class="quick-card-icon" style="background: rgba(255, 179, 0, 0.15); color: #B26A00;">
-            <i class="fa-solid fa-square-poll-vertical"></i>
+      <!-- Result Summary Cards -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 24px;">
+        <div class="quick-card" style="padding: 16px; text-align: center;">
+          <div style="font-size: 1.8rem; font-weight: 900; color: var(--brand-gold);">100%</div>
+          <div style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 700;">Overall Pass Rate (32/32)</div>
+        </div>
+        <div class="quick-card" style="padding: 16px; text-align: center;">
+          <div style="font-size: 1.8rem; font-weight: 900; color: #10B981;">30 / 32</div>
+          <div style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 700;">First Division (93.75%)</div>
+        </div>
+        <div class="quick-card" style="padding: 16px; text-align: center;">
+          <div style="font-size: 1.8rem; font-weight: 900; color: var(--brand-gold);">93.20%</div>
+          <div style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 700;">Manisha (Arts Topper)</div>
+        </div>
+        <div class="quick-card" style="padding: 16px; text-align: center;">
+          <div style="font-size: 1.8rem; font-weight: 900; color: var(--brand-sky);">85.40%</div>
+          <div style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 700;">Karyanika Yadav (Science)</div>
+        </div>
+      </div>
+
+      <!-- Result Search & Filter Bar -->
+      <div class="notices-table-container liquid-glass-card" style="padding: 24px; margin-bottom: 28px;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 20px;">
+          <!-- Filter Tabs -->
+          <div class="notice-filter-tabs" style="margin-bottom: 0;">
+            <button class="filter-tab res-tab-btn active" data-tab="toppers" onclick="switchResultTab('toppers')">
+              <i class="fa-solid fa-trophy me-1"></i> Merit Toppers (मेरिट सूची)
+            </button>
+            <button class="filter-tab res-tab-btn" data-tab="arts" onclick="switchResultTab('arts')">
+              <i class="fa-solid fa-palette me-1"></i> 12th Arts (20 Students)
+            </button>
+            <button class="filter-tab res-tab-btn" data-tab="science" onclick="switchResultTab('science')">
+              <i class="fa-solid fa-flask-vial me-1"></i> 12th Science (12 Students)
+            </button>
           </div>
-          <h3 class="quick-card-title" data-i18n-en="Check RBSE Results" data-i18n-hi="बोर्ड परीक्षा परिणाम देखें">Check RBSE Results</h3>
-          <p class="quick-card-desc" data-i18n-en="Search 10th & 12th Board exam results by Roll Number / Shala Darpan ID." data-i18n-hi="कक्षा 10वीं व 12वीं बोर्ड परीक्षा परिणाम रोल नंबर द्वारा सीधे देखें।">Search 10th & 12th Board exam results by Roll Number / Shala Darpan ID.</p>
-          <span style="margin-top: 12px; font-weight: 700; color: var(--color-primary); font-size: 0.85rem;">
-            <span data-i18n-en="Check Result Online" data-i18n-hi="परिणाम देखें">Check Result Online</span> <i class="fa-solid fa-arrow-right ms-1"></i>
-          </span>
+
+          <!-- Live Roll Number Search -->
+          <div style="display: flex; align-items: center; gap: 8px; max-width: 320px; width: 100%;">
+            <div style="position: relative; width: 100%;">
+              <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.85rem;"></i>
+              <input type="text" class="form-input" placeholder="Search Roll No / Name..." oninput="handleLiveResultSearch(this.value)" style="padding-left: 36px; font-size: 0.85rem; height: 38px;">
+            </div>
+          </div>
         </div>
 
+        <!-- Dynamic Result Table Output -->
+        <div id="boardResultTableContainer"></div>
+      </div>
+
+      <!-- Quick Services Grid (Shala Darpan / TC / Downloads) -->
+      <div class="quick-cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+        <!-- Link Card 1: Shala Darpan Portal -->
+        <a href="https://rajshaladarpan.rajasthan.gov.in" target="_blank" rel="noopener" class="quick-card" style="text-align: left; align-items: flex-start; text-decoration: none;">
+          <div class="quick-card-icon" style="background: rgba(25, 118, 210, 0.15); color: #1976D2;">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3 class="quick-card-title" data-i18n-en="Shala Darpan Portal (217004)" data-i18n-hi="शाला दर्पण पोर्टल (217004)">Shala Darpan Portal (217004)</h3>
+          <p class="quick-card-desc" data-i18n-en="Access official student profiles, attendance, and scholarship statuses directly on Rajasthan Govt portal." data-i18n-hi="राजस्थान सरकार शाला दर्पण पोर्टल पर विद्यार्थी प्रोफाइल, उपस्थिति व छात्रवृत्ति विवरण देखें।">Access official student profiles, attendance, and scholarship statuses directly on Rajasthan Govt portal.</p>
+          <span style="margin-top: 12px; font-weight: 700; color: var(--brand-sky); font-size: 0.85rem;">
+            <span data-i18n-en="Open Shala Darpan" data-i18n-hi="पोर्टल खोलें">Open Shala Darpan</span> <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+          </span>
+        </a>
+
         <!-- Link Card 2: Online TC Application -->
-        <div class="quick-card" onclick="openPortalModal('tc')" style="text-align: left; align-items: flex-start;">
+        <div class="quick-card" onclick="openPortalModal('tc')" style="text-align: left; align-items: flex-start; cursor: pointer;">
           <div class="quick-card-icon" style="background: rgba(46, 125, 50, 0.15); color: #2E7D32;">
             <i class="fa-solid fa-file-export"></i>
           </div>
           <h3 class="quick-card-title" data-i18n-en="Online TC Request" data-i18n-hi="ऑनलाइन टीसी आवेदन">Online TC Request</h3>
           <p class="quick-card-desc" data-i18n-en="Apply for Transfer Certificate (TC) & Character Certificate digitally without queue." data-i18n-hi="स्थानांतरण प्रमाण पत्र (TC) व चरित्र प्रमाण पत्र हेतु डिजिटल आवेदन।">Apply for Transfer Certificate (TC) & Character Certificate digitally without queue.</p>
-          <span style="margin-top: 12px; font-weight: 700; color: var(--color-success); font-size: 0.85rem;">
-            <span data-i18n-en="Apply for TC" data-i18n-hi="टीसी आवेदन करें">Apply for TC</span> <i class="fa-solid fa-arrow-right ms-1"></i>
+          <span style="margin-top: 12px; font-weight: 700; color: var(--brand-gold); font-size: 0.85rem;">
+            <span data-i18n-en="Apply for TC" data-i18n-hi="टीसी हेतु आवेदन करें">Apply for TC</span> <i class="fa-solid fa-arrow-right ms-1"></i>
           </span>
         </div>
 
-        <!-- Link Card 3: Shala Darpan Staff & Student Window -->
-        <a href="https://rajshaladarpan.rajasthan.gov.in" target="_blank" rel="noopener" class="quick-card" style="text-align: left; align-items: flex-start;">
-          <div class="quick-card-icon" style="background: rgba(21, 101, 192, 0.15); color: var(--color-primary);">
-            <i class="fa-solid fa-users-gear"></i>
+        <!-- Link Card 3: Download Syllabus & Forms -->
+        <div class="quick-card" onclick="openPortalModal('downloads')" style="text-align: left; align-items: flex-start; cursor: pointer;">
+          <div class="quick-card-icon" style="background: rgba(255, 179, 0, 0.15); color: var(--brand-gold);">
+            <i class="fa-solid fa-file-pdf"></i>
           </div>
-          <h3 class="quick-card-title" data-i18n-en="Shala Darpan Portal" data-i18n-hi="शाला दर्पण नागरिक पोर्टल">Shala Darpan Portal</h3>
-          <p class="quick-card-desc" data-i18n-en="Access student records, attendance, scholarship status and citizen window." data-i18n-hi="छात्र उपस्थिति, छात्रवृत्ति स्थिति व शाला दर्पण नागरिक सेवा पोर्टल।">Access student records, attendance, scholarship status and citizen window.</p>
-          <span style="margin-top: 12px; font-weight: 700; color: var(--color-secondary); font-size: 0.85rem;">
-            <span data-i18n-en="Visit Shala Darpan" data-i18n-hi="पोर्टल पर जाएं">Visit Shala Darpan</span> <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
-          </span>
-        </a>
-
-        <!-- Link Card 4: Download Forms & Syllabi -->
-        <div class="quick-card" onclick="openPortalModal('downloads')" style="text-align: left; align-items: flex-start;">
-          <div class="quick-card-icon" style="background: rgba(10, 37, 64, 0.1); color: var(--color-primary-dark);">
-            <i class="fa-solid fa-folder-open"></i>
-          </div>
-          <h3 class="quick-card-title" data-i18n-en="Forms & Syllabus PDF" data-i18n-hi="प्रपत्र व पाठ्यक्रम">Forms & Syllabus PDF</h3>
-          <p class="quick-card-desc" data-i18n-en="Download admission forms, fee concession formats & RBSE stream syllabus." data-i18n-hi="प्रवेश प्रपत्र, शुल्क मुक्ति फॉर्म एवं विस्तृत पाठ्यक्रम पीडीएफ डाउनलोड करें।">Download admission forms, fee concession formats & RBSE stream syllabus.</p>
-          <span style="margin-top: 12px; font-weight: 700; color: var(--color-primary-dark); font-size: 0.85rem;">
-            <span data-i18n-en="Download Center" data-i18n-hi="डाउनलोड सेंटर">Download Center</span> <i class="fa-solid fa-download ms-1"></i>
+          <h3 class="quick-card-title" data-i18n-en="Downloads & Forms" data-i18n-hi="प्रपत्र व पाठ्यक्रम डाउनलोड">Downloads & Forms</h3>
+          <p class="quick-card-desc" data-i18n-en="Download RBSE official syllabus, offline admission forms, and fee concession declaration formats." data-i18n-hi="आरबीएसई पाठ्यक्रम, ऑफलाइन प्रवेश फॉर्म एवं शुल्क मुक्ति प्रपत्र डाउनलोड करें।">Download RBSE official syllabus, offline admission forms, and fee concession declaration formats.</p>
+          <span style="margin-top: 12px; font-weight: 700; color: var(--brand-gold); font-size: 0.85rem;">
+            <span data-i18n-en="Download Documents" data-i18n-hi="दस्तावेज डाउनलोड करें">Download Documents</span> <i class="fa-solid fa-download ms-1"></i>
           </span>
         </div>
       </div>
@@ -997,6 +1038,7 @@
   <!-- Scripts -->
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/results_controller.js"></script>
 
   <!-- =========================================================================
        MODALS: 3. RESULTS & ONLINE SERVICES MODAL

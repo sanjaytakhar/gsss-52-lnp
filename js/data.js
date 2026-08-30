@@ -418,6 +418,64 @@ window.SCHOOL_DATA = {
 
   testimonials: [],
 
+
+  boardResults2026: {
+    year: '2026',
+    schoolCode: '1240860 / 217004',
+    schoolName: 'Govt. Sr. Sec. School 52 LNP (Manjhuwas), Padampur, Sri Ganganagar',
+    summary: {
+      totalCandidates: 32,
+      totalPassed: 32,
+      passRate: '100%',
+      firstDivision: 30,
+      secondDivision: 2,
+      thirdDivision: 0
+    },
+    toppers: [
+      { rank: 1, roll: '3359329', name: 'Manisha', father: 'Surender Kumar', stream: 'Arts', marks: 466, maxMarks: 500, percent: '93.20%', badge: 'School Topper (Arts)' },
+      { rank: 2, roll: '3359328', name: 'Lalita', father: 'Madanlal', stream: 'Arts', marks: 431, maxMarks: 500, percent: '86.20%', badge: '2nd Rank (Arts)' },
+      { rank: 3, roll: '2737271', name: 'Karyanika Yadav', father: 'Pawan Kumar', stream: 'Science', marks: 427, maxMarks: 500, percent: '85.40%', badge: 'Science Topper' },
+      { rank: 4, roll: '3359324', name: 'Divya', father: 'Rajender', stream: 'Arts', marks: 395, maxMarks: 500, percent: '79.00%', badge: '3rd Rank (Arts)' },
+      { rank: 5, roll: '2737275', name: 'Monika', father: 'Surja Ram', stream: 'Science', marks: 366, maxMarks: 500, percent: '73.20%', badge: '2nd Rank (Science)' },
+      { rank: 6, roll: '2737274', name: 'Monika', father: 'Sanjay Dutt', stream: 'Science', marks: 347, maxMarks: 500, percent: '69.40%', badge: '3rd Rank (Science)' }
+    ],
+    scienceStudents: [
+      { sNo: 1, roll: '2737270', name: 'Dimple', father: 'Harji Ram', hindi: 85, english: 48, physics: 53, chemistry: 64, biology: '76D', total: 326, percent: 65.2, result: 'First Division' },
+      { sNo: 2, roll: '2737271', name: 'Karyanika Yadav', father: 'Pawan Kumar', hindi: 97, english: 82, physics: 70, chemistry: '86D', biology: '92D', total: 427, percent: 85.4, result: 'First Division' },
+      { sNo: 3, roll: '2737272', name: 'Keshav', father: 'Mahaveer', hindi: 86, english: 58, physics: 54, chemistry: 60, biology: 73, total: 331, percent: 66.2, result: 'First Division' },
+      { sNo: 4, roll: '2737273', name: 'Manish', father: 'Om Prakash', hindi: 68, english: 67, physics: 52, chemistry: 61, biology: 59, total: 307, percent: 61.4, result: 'First Division' },
+      { sNo: 5, roll: '2737274', name: 'Monika', father: 'Sanjay Dutt', hindi: 74, english: 69, physics: 59, chemistry: 73, biology: 72, total: 347, percent: 69.4, result: 'First Division' },
+      { sNo: 6, roll: '2737275', name: 'Monika', father: 'Surja Ram', hindi: 85, english: 66, physics: 65, chemistry: '77D', biology: 73, total: 366, percent: 73.2, result: 'First Division' },
+      { sNo: 7, roll: '2737276', name: 'Nitisha', father: 'Satpal', hindi: 79, english: 62, physics: 54, chemistry: 67, biology: 63, total: 325, percent: 65.0, result: 'First Division' },
+      { sNo: 8, roll: '2737277', name: 'Poonam', father: 'Syoprakash', hindi: 82, english: 68, physics: 60, chemistry: 62, biology: 70, total: 342, percent: 68.4, result: 'First Division' },
+      { sNo: 9, roll: '2737278', name: 'Saniya', father: 'Jaswant', hindi: 65, english: 48, physics: 54, chemistry: 55, biology: 62, total: 284, percent: 56.8, result: 'Second Division' },
+      { sNo: 10, roll: '2737279', name: 'Shiv Kumar', father: 'Rajender Kumar', hindi: 66, english: 58, physics: 52, chemistry: 56, biology: 58, total: 290, percent: 58.0, result: 'Second Division' },
+      { sNo: 11, roll: '2737280', name: 'Sonu', father: 'Doulat Ram', hindi: 69, english: 66, physics: 60, chemistry: 66, biology: 65, total: 326, percent: 65.2, result: 'First Division' },
+      { sNo: 12, roll: '2737281', name: 'Yogesh', father: 'Kashi Ram', hindi: 75, english: 61, physics: 61, chemistry: 64, biology: 62, total: 323, percent: 64.6, result: 'First Division' }
+    ],
+    artsStudents: [
+      { sNo: 1, roll: '3359316', name: 'Aaina', father: 'Brijlal', hindi: 79, english: 54, polSci: '86D', geography: '79D', sociology: '83D', total: 381, percent: 76.2, result: 'First Division' },
+      { sNo: 2, roll: '3359317', name: 'Abhishek Sharma', father: 'Arjun Lal Sharma', hindi: 68, english: 52, polSci: '81D', geography: '82D', sociology: 67, total: 350, percent: 70.0, result: 'First Division' },
+      { sNo: 3, roll: '3359318', name: 'Amit Kumar', father: 'Patram', hindi: 82, english: 47, polSci: '82D', geography: '85D', sociology: '75D', total: 371, percent: 74.2, result: 'First Division' },
+      { sNo: 4, roll: '3359319', name: 'Arpit', father: 'Subhash', hindi: 64, english: 54, polSci: '89D', geography: '77D', sociology: 69, total: 353, percent: 70.6, result: 'First Division' },
+      { sNo: 5, roll: '3359320', name: 'Bheem Sen', father: 'Ghanshyam', hindi: 68, english: 38, polSci: '86D', geography: 67, sociology: 69, total: 328, percent: 65.6, result: 'First Division' },
+      { sNo: 6, roll: '3359321', name: 'Bhumika', father: 'Ghanshyam', hindi: 70, english: 48, polSci: '87D', geography: 74, sociology: 73, total: 352, percent: 70.4, result: 'First Division' },
+      { sNo: 7, roll: '3359322', name: 'Dharmveer', father: 'Sahbram', hindi: 70, english: 40, polSci: '88D', geography: 66, sociology: 70, total: 334, percent: 66.8, result: 'First Division' },
+      { sNo: 8, roll: '3359323', name: 'Divya', father: 'Dharmender', hindi: 81, english: 52, polSci: '90D', geography: '77D', sociology: '80D', total: 380, percent: 76.0, result: 'First Division' },
+      { sNo: 9, roll: '3359324', name: 'Divya', father: 'Rajender', hindi: 87, english: 60, polSci: '91D', geography: '78D', sociology: '79D', total: 395, percent: 79.0, result: 'First Division' },
+      { sNo: 10, roll: '3359325', name: 'Hemant Kumar', father: 'Ramnarayan', hindi: 83, english: 63, polSci: '88D', geography: '76D', sociology: '79D', total: 389, percent: 77.8, result: 'First Division' },
+      { sNo: 11, roll: '3359326', name: 'Kavita Jakhar', father: 'Balwant Ram', hindi: 63, english: 52, polSci: 69, geography: 64, sociology: 56, total: 304, percent: 60.8, result: 'First Division' },
+      { sNo: 12, roll: '3359327', name: 'Lakshay', father: 'Naresh Kumar', hindi: 75, english: 68, polSci: '89D', geography: '78D', sociology: '77D', total: 387, percent: 77.4, result: 'First Division' },
+      { sNo: 13, roll: '3359328', name: 'Lalita', father: 'Madanlal', hindi: 84, english: 85, polSci: '93D', geography: '90D', sociology: '79D', total: 431, percent: 86.2, result: 'First Division' },
+      { sNo: 14, roll: '3359329', name: 'Manisha', father: 'Surender Kumar', hindi: 92, english: 89, polSci: '99D', geography: '98D', sociology: '88D', total: 466, percent: 93.2, result: 'First Division' },
+      { sNo: 15, roll: '3359330', name: 'Piyush', father: 'Dharmveer', hindi: 75, english: 77, polSci: '88D', geography: '81D', sociology: 63, total: 384, percent: 76.8, result: 'First Division' },
+      { sNo: 16, roll: '3359331', name: 'Sanjay', father: 'Krishan Lal', hindi: 64, english: 57, polSci: '87D', geography: 71, sociology: 62, total: 341, percent: 68.2, result: 'First Division' },
+      { sNo: 17, roll: '3359332', name: 'Sumit', father: 'Shrif', hindi: 72, english: 61, polSci: '98D', geography: 73, sociology: 67, total: 371, percent: 74.2, result: 'First Division' },
+      { sNo: 18, roll: '3359333', name: 'Tushar', father: 'Brij Lal', hindi: 75, english: 60, polSci: '98D', geography: '80D', sociology: '77D', total: 390, percent: 78.0, result: 'First Division' },
+      { sNo: 19, roll: '3359334', name: 'Yogita', father: 'Fakir Chand', hindi: 72, english: 58, polSci: '76D', geography: 64, sociology: 63, total: 333, percent: 66.6, result: 'First Division' },
+      { sNo: 20, roll: '3359335', name: 'Yogita', father: 'Sahabram', hindi: 76, english: 59, polSci: '89D', geography: '75D', sociology: 60, total: 359, percent: 71.8, result: 'First Division' }
+    ]
+  },
   gallery: [
     {
       id: 1,
