@@ -226,9 +226,11 @@ window.openStudentScorecard = function(rollNo) {
         </tfoot>
       </table>
 
-      <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; margin-bottom: 16px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center; padding: 12px; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; margin-bottom: 16px;">
         <span style="color: #10B981; font-weight: 800;"><i class="fa-solid fa-award me-1"></i> FINAL RESULT: ${student.result.toUpperCase()}</span>
-        ${student.percent >= 75 ? '<span style="background: #10B981; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">GARGI PURASKAR ELIGIBLE</span>' : ''}
+        ${student.gender === 'F' && student.percent >= 75 
+          ? '<span style="background: #E11D48; color: #fff; padding: 3px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 800;"><i class="fa-solid fa-award me-1"></i> GARGI PURASKAR ELIGIBLE (गार्गी पुरस्कार - केवल छात्रा)</span>' 
+          : (student.percent >= 75 ? '<span style="background: #10B981; color: #fff; padding: 3px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 800;"><i class="fa-solid fa-trophy me-1"></i> MERIT DISTINCTION (मेधावी छात्र सम्मान)</span>' : '')}
       </div>
 
       <div style="display: flex; gap: 10px;">
