@@ -1019,3 +1019,104 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// ==========================================================================
+// 3D PARALLAX TILT & HOVER ENGINE (HERO 3D CAMPUS MODEL)
+// ==========================================================================
+function init3DCampusModel() {
+  const card = document.getElementById('heroModelCard');
+  if (!card) return;
+
+  let bounds = card.getBoundingClientRect();
+  let currentRotateX = 0;
+  let currentRotateY = 0;
+  let targetRotateX = 0;
+  let targetRotateY = 0;
+  let isHovered = false;
+
+  function updateBounds() {
+    bounds = card.getBoundingClientRect();
+  }
+
+  window.addEventListener('resize', updateBounds, { passive: true });
+  window.addEventListener('scroll', updateBounds, { passive: true });
+
+  card.addEventListener('mouseenter', () => {
+    isHovered = true;
+    card.classList.add('is-hovering');
+    updateBounds();
+  });
+
+  card.addEventListener('mousemove', (e) => {
+    if (!isHovered) return;
+    const x = e.clientX - bounds.left;
+    const y = e.clientY - bounds.top;
+
+    const percentX = Math.max(0, Math.min(1, x / bounds.width));
+    const percentY = Math.max(0, Math.min(1, y / bounds.height));
+
+    // Tilt range: -14 to +14 deg
+    targetRotateX = (0.5 - percentY) * 24;
+    targetRotateY = (percentX - 0.5) * 24;
+
+    card.style.setProperty('--mouse-x', `${(percentX * 100).toFixed(1)}%`);
+    card.style.setProperty('--mouse-y', `${(percentY * 100).toFixed(1)}%`);
+    card.style.setProperty('--shine-x', `${(percentX * 100).toFixed(1)}%`);
+    card.style.setProperty('--shine-y', `${(percentY * 100).toFixed(1)}%`);
+  });
+
+  card.addEventListener('mouseleave', () => {
+    isHovered = false;
+    card.classList.remove('is-hovering');
+    targetRotateX = 0;
+    targetRotateY = 0;
+  });
+
+  // Touch / Mobile Tilt Support
+  card.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 0) {
+      const touch = e.touches[0];
+      const x = touch.clientX - bounds.left;
+      const y = touch.clientY - bounds.top;
+      const percentX = Math.max(0, Math.min(1, x / bounds.width));
+      const percentY = Math.max(0, Math.min(1, y / bounds.height));
+      targetRotateX = (0.5 - percentY) * 18;
+      targetRotateY = (percentX - 0.5) * 18;
+      isHovered = true;
+      card.classList.add('is-hovering');
+    }
+  }, { passive: true });
+
+  card.addEventListener('touchend', () => {
+    isHovered = false;
+    card.classList.remove('is-hovering');
+    targetRotateX = 0;
+    targetRotateY = 0;
+  });
+
+  // Smooth lerp loop
+  function renderLoop() {
+    if (isHovered) {
+      currentRotateX += (targetRotateX - currentRotateX) * 0.14;
+      currentRotateY += (targetRotateY - currentRotateY) * 0.14;
+
+      card.style.transform = `perspective(1200px) rotateX(${currentRotateX.toFixed(2)}deg) rotateY(${currentRotateY.toFixed(2)}deg) scale3d(1.035, 1.035, 1.035)`;
+    } else {
+      currentRotateX += (0 - currentRotateX) * 0.08;
+      currentRotateY += (0 - currentRotateY) * 0.08;
+
+      if (Math.abs(currentRotateX) > 0.05 || Math.abs(currentRotateY) > 0.05) {
+        card.style.transform = `perspective(1200px) rotateX(${currentRotateX.toFixed(2)}deg) rotateY(${currentRotateY.toFixed(2)}deg)`;
+      } else {
+        card.style.transform = '';
+      }
+    }
+    requestAnimationFrame(renderLoop);
+  }
+
+  requestAnimationFrame(renderLoop);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  init3DCampusModel();
+});
