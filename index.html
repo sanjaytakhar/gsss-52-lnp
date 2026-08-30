@@ -616,57 +616,63 @@
     <!-- =========================================================================
        ACADEMIC RESULTS & BOARD PERFORMANCE SHOWCASE 2026
        ========================================================================= -->
+    <!-- =========================================================================
+       ACADEMIC RESULTS & BOARD PERFORMANCE SHOWCASE 2026 (CLASS 10TH & 12TH)
+       ========================================================================= -->
   <section class="notice-section" id="results">
     <div class="container">
       <div class="text-center">
         <div class="section-tag accent" data-i18n-en="RBSE Board Results 2026" data-i18n-hi="आरबीएसई बोर्ड परीक्षा परिणाम 2026">RBSE Board Results 2026</div>
-        <h2 class="section-title" data-i18n-en="Class 12th Board Examination Results (100% Pass)" data-i18n-hi="कक्षा 12वीं बोर्ड परीक्षा परिणाम (100% उत्तीर्ण)">Class 12th Board Examination Results</h2>
-        <p class="section-subtitle" data-i18n-en="Outstanding 100% Pass Result across Science & Arts streams with 30 First Divisions (93.75%)." data-i18n-hi="कला एवं विज्ञान संकाय में 100% उत्कृष्ट परीक्षा परिणाम एवं 30 विद्यार्थियों द्वारा प्रथम श्रेणी प्राप्त।">
-          Outstanding 100% Pass Result across Science & Arts streams with 30 First Divisions (93.75%).
+        <h2 class="section-title" data-i18n-en="Class 10th & 12th Board Examination Results (100% Pass)" data-i18n-hi="कक्षा 10वीं व 12वीं बोर्ड परीक्षा परिणाम (100% उत्तीर्ण)">Class 10th & 12th Board Examination Results</h2>
+        <p class="section-subtitle" data-i18n-en="Outstanding 100% Pass Result across Secondary and Senior Secondary with 69 First Divisions across 85 Students." data-i18n-hi="माध्यमिक व उच्च माध्यमिक बोर्ड परीक्षा में 100% शानदार परिणाम एवं 69 विद्यार्थियों द्वारा प्रथम श्रेणी प्राप्त।">
+          Outstanding 100% Pass Result across Secondary and Senior Secondary with 69 First Divisions across 85 Students.
         </p>
       </div>
 
       <!-- Result Summary Cards -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 24px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 24px;">
         <div class="quick-card" style="padding: 16px; text-align: center;">
           <div style="font-size: 1.8rem; font-weight: 900; color: var(--brand-gold);">100%</div>
-          <div style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 700;">Overall Pass Rate (32/32)</div>
+          <div style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 700;">Overall Pass Rate (85/85)</div>
         </div>
         <div class="quick-card" style="padding: 16px; text-align: center;">
-          <div style="font-size: 1.8rem; font-weight: 900; color: #10B981;">30 / 32</div>
-          <div style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 700;">First Division (93.75%)</div>
+          <div style="font-size: 1.8rem; font-weight: 900; color: #10B981;">97.33%</div>
+          <div style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 700;">Vaibhav Godara (10th Topper)</div>
         </div>
         <div class="quick-card" style="padding: 16px; text-align: center;">
           <div style="font-size: 1.8rem; font-weight: 900; color: var(--brand-gold);">93.20%</div>
-          <div style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 700;">Manisha (Arts Topper)</div>
+          <div style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 700;">Manisha (12th Arts Topper)</div>
         </div>
         <div class="quick-card" style="padding: 16px; text-align: center;">
           <div style="font-size: 1.8rem; font-weight: 900; color: var(--brand-sky);">85.40%</div>
-          <div style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 700;">Karyanika Yadav (Science)</div>
+          <div style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 700;">Karyanika Yadav (12th Sci)</div>
         </div>
       </div>
 
-      <!-- Result Search & Filter Bar -->
+      <!-- Result Search & Filter Container -->
       <div class="notices-table-container liquid-glass-card" style="padding: 24px; margin-bottom: 28px;">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 20px;">
-          <!-- Filter Tabs -->
-          <div class="notice-filter-tabs" style="margin-bottom: 0;">
-            <button class="filter-tab res-tab-btn active" data-tab="toppers" onclick="switchResultTab('toppers')">
-              <i class="fa-solid fa-trophy me-1"></i> Merit Toppers (मेरिट सूची)
-            </button>
-            <button class="filter-tab res-tab-btn" data-tab="arts" onclick="switchResultTab('arts')">
-              <i class="fa-solid fa-palette me-1"></i> 12th Arts (20 Students)
-            </button>
-            <button class="filter-tab res-tab-btn" data-tab="science" onclick="switchResultTab('science')">
-              <i class="fa-solid fa-flask-vial me-1"></i> 12th Science (12 Students)
-            </button>
+        
+        <!-- Primary Class Switcher (10th vs 12th) -->
+        <div style="display: flex; justify-content: center; margin-bottom: 20px; gap: 12px;">
+          <button class="filter-tab class-tab-btn active" data-class="10th" onclick="switchResultClass('10th')" style="padding: 8px 24px; font-size: 0.95rem; font-weight: 800;">
+            <i class="fa-solid fa-graduation-cap me-1"></i> Class 10th Secondary (53 Students)
+          </button>
+          <button class="filter-tab class-tab-btn" data-class="12th" onclick="switchResultClass('12th')" style="padding: 8px 24px; font-size: 0.95rem; font-weight: 800;">
+            <i class="fa-solid fa-school me-1"></i> Class 12th Sr. Secondary (32 Students)
+          </button>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 20px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08);">
+          <!-- Sub Tabs (Toppers / Streams) -->
+          <div class="notice-filter-tabs" id="resultSubTabsContainer" style="margin-bottom: 0;">
+            <!-- Rendered by results_controller.js -->
           </div>
 
-          <!-- Live Roll Number Search -->
+          <!-- Live Roll Number Search Across 85 Students -->
           <div style="display: flex; align-items: center; gap: 8px; max-width: 320px; width: 100%;">
             <div style="position: relative; width: 100%;">
               <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.85rem;"></i>
-              <input type="text" class="form-input" placeholder="Search Roll No / Name..." oninput="handleLiveResultSearch(this.value)" style="padding-left: 36px; font-size: 0.85rem; height: 38px;">
+              <input type="text" class="form-input" placeholder="Search 10th / 12th Roll No or Name..." oninput="handleLiveResultSearch(this.value)" style="padding-left: 36px; font-size: 0.85rem; height: 38px;">
             </div>
           </div>
         </div>
