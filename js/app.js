@@ -4,6 +4,51 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // =========================================================================
+  // CINEMATIC BACKGROUND VIDEO CONTROLLER (Manual Smooth 0.5s In/Out Loop)
+  // =========================================================================
+  const bgVideo = document.getElementById('bgCinematicVideo');
+  if (bgVideo) {
+    let videoRaf = null;
+
+    const monitorVideoFade = () => {
+      if (bgVideo && bgVideo.duration && !bgVideo.paused) {
+        const currentTime = bgVideo.currentTime;
+        const duration = bgVideo.duration;
+        const fadeDuration = 0.5; // 0.5s fade window
+
+        if (currentTime < fadeDuration) {
+          // Fade in over 0.5s at start (0 to 1)
+          const fadeInOpacity = Math.max(0, Math.min(1, currentTime / fadeDuration));
+          bgVideo.style.opacity = fadeInOpacity.toFixed(3);
+        } else if (duration - currentTime < fadeDuration) {
+          // Fade out over 0.5s before end (1 to 0)
+          const fadeOutOpacity = Math.max(0, Math.min(1, (duration - currentTime) / fadeDuration));
+          bgVideo.style.opacity = fadeOutOpacity.toFixed(3);
+        } else {
+          bgVideo.style.opacity = '1';
+        }
+      }
+      videoRaf = requestAnimationFrame(monitorVideoFade);
+    };
+
+    bgVideo.addEventListener('ended', () => {
+      bgVideo.style.opacity = '0';
+      setTimeout(() => {
+        if (bgVideo) {
+          bgVideo.currentTime = 0;
+          bgVideo.play().catch(() => {});
+        }
+      }, 100);
+    });
+
+    bgVideo.play().then(() => {
+      videoRaf = requestAnimationFrame(monitorVideoFade);
+    }).catch(() => {
+      // Autoplay fallback
+    });
+  }
+
   // Page Preloader Fadeout
   window.addEventListener('load', () => {
     const preloader = document.getElementById('pagePreloader');
@@ -927,6 +972,51 @@ window.handleTCSubmit = function() {
 // 3D INTERACTIVE MOUSE PARALLAX & TILT ENGINE
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
+  // =========================================================================
+  // CINEMATIC BACKGROUND VIDEO CONTROLLER (Manual Smooth 0.5s In/Out Loop)
+  // =========================================================================
+  const bgVideo = document.getElementById('bgCinematicVideo');
+  if (bgVideo) {
+    let videoRaf = null;
+
+    const monitorVideoFade = () => {
+      if (bgVideo && bgVideo.duration && !bgVideo.paused) {
+        const currentTime = bgVideo.currentTime;
+        const duration = bgVideo.duration;
+        const fadeDuration = 0.5; // 0.5s fade window
+
+        if (currentTime < fadeDuration) {
+          // Fade in over 0.5s at start (0 to 1)
+          const fadeInOpacity = Math.max(0, Math.min(1, currentTime / fadeDuration));
+          bgVideo.style.opacity = fadeInOpacity.toFixed(3);
+        } else if (duration - currentTime < fadeDuration) {
+          // Fade out over 0.5s before end (1 to 0)
+          const fadeOutOpacity = Math.max(0, Math.min(1, (duration - currentTime) / fadeDuration));
+          bgVideo.style.opacity = fadeOutOpacity.toFixed(3);
+        } else {
+          bgVideo.style.opacity = '1';
+        }
+      }
+      videoRaf = requestAnimationFrame(monitorVideoFade);
+    };
+
+    bgVideo.addEventListener('ended', () => {
+      bgVideo.style.opacity = '0';
+      setTimeout(() => {
+        if (bgVideo) {
+          bgVideo.currentTime = 0;
+          bgVideo.play().catch(() => {});
+        }
+      }, 100);
+    });
+
+    bgVideo.play().then(() => {
+      videoRaf = requestAnimationFrame(monitorVideoFade);
+    }).catch(() => {
+      // Autoplay fallback
+    });
+  }
+
   const heroSection = document.getElementById('home');
   const floatingItems = document.querySelectorAll('.floating-3d-item');
 
@@ -976,6 +1066,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Theme Switcher (Liquid Glass & BB-8 Droid Toggle)
 document.addEventListener('DOMContentLoaded', () => {
+  // =========================================================================
+  // CINEMATIC BACKGROUND VIDEO CONTROLLER (Manual Smooth 0.5s In/Out Loop)
+  // =========================================================================
+  const bgVideo = document.getElementById('bgCinematicVideo');
+  if (bgVideo) {
+    let videoRaf = null;
+
+    const monitorVideoFade = () => {
+      if (bgVideo && bgVideo.duration && !bgVideo.paused) {
+        const currentTime = bgVideo.currentTime;
+        const duration = bgVideo.duration;
+        const fadeDuration = 0.5; // 0.5s fade window
+
+        if (currentTime < fadeDuration) {
+          // Fade in over 0.5s at start (0 to 1)
+          const fadeInOpacity = Math.max(0, Math.min(1, currentTime / fadeDuration));
+          bgVideo.style.opacity = fadeInOpacity.toFixed(3);
+        } else if (duration - currentTime < fadeDuration) {
+          // Fade out over 0.5s before end (1 to 0)
+          const fadeOutOpacity = Math.max(0, Math.min(1, (duration - currentTime) / fadeDuration));
+          bgVideo.style.opacity = fadeOutOpacity.toFixed(3);
+        } else {
+          bgVideo.style.opacity = '1';
+        }
+      }
+      videoRaf = requestAnimationFrame(monitorVideoFade);
+    };
+
+    bgVideo.addEventListener('ended', () => {
+      bgVideo.style.opacity = '0';
+      setTimeout(() => {
+        if (bgVideo) {
+          bgVideo.currentTime = 0;
+          bgVideo.play().catch(() => {});
+        }
+      }, 100);
+    });
+
+    bgVideo.play().then(() => {
+      videoRaf = requestAnimationFrame(monitorVideoFade);
+    }).catch(() => {
+      // Autoplay fallback
+    });
+  }
+
   const themeToggle = document.getElementById('themeToggleSwitch');
   
   function playBB8Beep(isNight) {
@@ -1133,5 +1268,50 @@ function init3DCampusModel() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // =========================================================================
+  // CINEMATIC BACKGROUND VIDEO CONTROLLER (Manual Smooth 0.5s In/Out Loop)
+  // =========================================================================
+  const bgVideo = document.getElementById('bgCinematicVideo');
+  if (bgVideo) {
+    let videoRaf = null;
+
+    const monitorVideoFade = () => {
+      if (bgVideo && bgVideo.duration && !bgVideo.paused) {
+        const currentTime = bgVideo.currentTime;
+        const duration = bgVideo.duration;
+        const fadeDuration = 0.5; // 0.5s fade window
+
+        if (currentTime < fadeDuration) {
+          // Fade in over 0.5s at start (0 to 1)
+          const fadeInOpacity = Math.max(0, Math.min(1, currentTime / fadeDuration));
+          bgVideo.style.opacity = fadeInOpacity.toFixed(3);
+        } else if (duration - currentTime < fadeDuration) {
+          // Fade out over 0.5s before end (1 to 0)
+          const fadeOutOpacity = Math.max(0, Math.min(1, (duration - currentTime) / fadeDuration));
+          bgVideo.style.opacity = fadeOutOpacity.toFixed(3);
+        } else {
+          bgVideo.style.opacity = '1';
+        }
+      }
+      videoRaf = requestAnimationFrame(monitorVideoFade);
+    };
+
+    bgVideo.addEventListener('ended', () => {
+      bgVideo.style.opacity = '0';
+      setTimeout(() => {
+        if (bgVideo) {
+          bgVideo.currentTime = 0;
+          bgVideo.play().catch(() => {});
+        }
+      }, 100);
+    });
+
+    bgVideo.play().then(() => {
+      videoRaf = requestAnimationFrame(monitorVideoFade);
+    }).catch(() => {
+      // Autoplay fallback
+    });
+  }
+
   init3DCampusModel();
 });
