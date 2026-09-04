@@ -2577,3 +2577,23 @@ body {
   background: rgba(173, 139, 115, 0.08) !important;
   border-top-color: rgba(173, 139, 115, 0.2) !important;
 }
+
+/* ==========================================================================
+   THREE.JS 3D HERO CANVAS CONTAINER & LIGHTING
+   ========================================================================== */
+.hero-3d-canvas-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-3d-canvas-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  pointer-events: none;
+}
